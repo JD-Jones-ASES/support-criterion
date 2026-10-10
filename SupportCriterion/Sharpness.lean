@@ -24,11 +24,6 @@ lemma sharpRatio_sq : sharpRatio ^ 2 = 5 + 2 * Real.sqrt 6 := by
   nlinarith [Real.sq_sqrt (show (0 : ℝ) ≤ 3 by norm_num),
     Real.sq_sqrt (show (0 : ℝ) ≤ 2 by norm_num)]
 
-/-- The explicit counterexample law for an amplitude ratio `R`. -/
-noncomputable def counterexampleLaw (R : ℝ) : Measure ℝ :=
-  ENNReal.ofReal (R ^ 2 / (R ^ 2 + 1)) • symmetricTwoPoint 1 +
-    ENNReal.ofReal (1 / (R ^ 2 + 1)) • symmetricTwoPoint R
-
 lemma counterexampleLaw_isProbabilityMeasure (R : ℝ) :
     IsProbabilityMeasure (counterexampleLaw R) := by
   have hd : 0 < R ^ 2 + 1 := by positivity

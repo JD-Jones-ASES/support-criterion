@@ -45,4 +45,9 @@ noncomputable def endpointLaw (v : ℝ) : Measure ℝ :=
 noncomputable def criticalLaw : Measure ℝ := endpointLaw 1
 noncomputable def squaredLaw (μ : Measure ℝ) : Measure ℝ := Measure.map (fun x : ℝ => x ^ 2) μ
 
+/-- The explicit counterexample law for an amplitude ratio `R`. -/
+noncomputable def counterexampleLaw (R : ℝ) : Measure ℝ :=
+  ENNReal.ofReal (R ^ 2 / (R ^ 2 + 1)) • symmetricTwoPoint 1 +
+    ENNReal.ofReal (1 / (R ^ 2 + 1)) • symmetricTwoPoint R
+
 end SupportCriterion
