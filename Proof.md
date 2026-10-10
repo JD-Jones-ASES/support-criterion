@@ -7,8 +7,8 @@ provides the primary-source comparisons.
 
 ## The sharp theorem
 
-Let $X$ be a real random variable whose law is symmetric about zero.
-Suppose that $0<a\le |X|\le b<\infty$ almost surely. If
+Let $`X`$ be a real random variable whose law is symmetric about zero.
+Suppose that $`0<a\le |X|\le b<\infty`$ almost surely. If
 
 
 ```math
@@ -16,7 +16,7 @@ Suppose that $0<a\le |X|\le b<\infty$ almost surely. If
 ```
 
 
-then, for every real $t$,
+then, for every real $`t`$,
 
 
 ```math
@@ -25,10 +25,10 @@ then, for every real $t$,
 ```
 
 
-The inequality is strict for $t\ne0$. Its quadratic variance proxy is
+The inequality is strict for $`t\ne0`$. Its quadratic variance proxy is
 optimal, and the universal support-ratio constant cannot be increased.
 The law may be discrete, continuous or mixed; no density, finite-support
-or independence assumption is made. Symmetry supplies $\mathbb EX=0$.
+or independence assumption is made. Symmetry supplies $`\mathbb EX=0`$.
 
 Here “strictly sub-Gaussian” has the conventional meaning that the optimal
 proxy is the actual variance. Strictness of the MGF inequality away from
@@ -44,13 +44,13 @@ A=3-\sqrt6,\qquad B=3+\sqrt6.
 ```
 
 
-These numbers obey $A+B=6$, $AB=3$,
-$B/A=5+2\sqrt6=R_*^2$, and $A>11/20$.
-Replacing $X$ by $\sqrt A X/a$ places $X^2$ in $[A,B]$.
+These numbers obey $`A+B=6`$, $`AB=3`$,
+$`B/A=5+2\sqrt6=R_*^2`$, and $`A>11/20`$.
+Replacing $`X`$ by $`\sqrt A X/a`$ places $`X^2`$ in $`[A,B]`$.
 Proving the MGF inequality after this scaling proves the original statement
-for all real $t$, including when $a=b$.
+for all real $`t`$, including when $`a=b`$.
 
-For fixed $t$, the entire power series
+For fixed $`t`$, the entire power series
 
 
 ```math
@@ -58,9 +58,9 @@ g_t(y)=\cosh(t\sqrt y)=\sum_{n=0}^\infty\frac{t^{2n}y^n}{(2n)!}
 ```
 
 
-is convex on $[0,\infty)$: termwise second differentiation is valid
+is convex on $`[0,\infty)`$: termwise second differentiation is valid
 on compact intervals and every resulting coefficient is nonnegative.
-The chord bound on $[A,B]$, symmetry and $v=\mathbb EX^2$ give
+The chord bound on $`[A,B]`$, symmetry and $`v=\mathbb EX^2`$ give
 
 
 ```math
@@ -71,14 +71,14 @@ The chord bound on $[A,B]$, symmetry and $v=\mathbb EX^2$ give
 
 
 The right side is the MGF of a symmetric four-point law with the same
-variance $v$. It suffices to prove the MGF inequality for every such law,
-where $A\le v\le B$. For $t\ne0$, $g_t$ is strictly convex, so equality
-in the chord bound forces $X^2\in\{A,B\}$ almost surely.
+variance $`v`$. It suffices to prove the MGF inequality for every such law,
+where $`A\le v\le B`$. For $`t\ne0`$, $`g_t`$ is strictly convex, so equality
+in the chord bound forces $`X^2\in\{A,B\}`$ almost surely.
 
 ## 2. Control the infinite tail by the endpoint recurrence
 
-For this endpoint law write $s_n=\mathbb EX^{2n}$. Since each squared
-endpoint solves $y^2-6y+3=0$,
+For this endpoint law write $`s_n=\mathbb EX^{2n}`$. Since each squared
+endpoint solves $`y^2-6y+3=0`$,
 
 
 ```math
@@ -86,7 +86,7 @@ s_0=1,\quad s_1=v,\quad s_n=6s_{n-1}-3s_{n-2}\quad(n\ge2).
 ```
 
 
-Define $f_n(v)=v^n-s_n/(2n-1)!!$, with $(-1)!!=1$. Directly,
+Define $`f_n(v)=v^n-s_n/(2n-1)!!`$, with $`(-1)!!=1`$. Directly,
 
 
 ```math
@@ -100,9 +100,9 @@ f_5&=v^5-\frac{109}{105}v+\frac47.
 ```
 
 
-First, $f_5(v)>0$ for every $v\ge0$. Convexity gives
-$v^5\ge5c^4v-4c^5$ for every $c\ge0$. Taking $c=2/3$ for
-$0\le v\le4/5$ yields
+First, $`f_5(v)>0`$ for every $`v\ge0`$. Convexity gives
+$`v^5\ge5c^4v-4c^5`$ for every $`c\ge0`$. Taking $`c=2/3`$ for
+$`0\le v\le4/5`$ yields
 
 
 ```math
@@ -111,7 +111,7 @@ f_5(v)\ge\frac{76}{1701}-\frac{143}{2835}v
 ```
 
 
-Taking $c=3/4$ for $v\ge4/5$ yields
+Taking $`c=3/4`$ for $`v\ge4/5`$ yields
 
 
 ```math
@@ -120,9 +120,9 @@ f_5(v)\ge\frac{14621}{26880}v-\frac{677}{1792}
 ```
 
 
-Next, $B/A<11$. For $v\ge A$ and $n\ge5$,
-$B<(2n+1)v$, while $s_{n+1}\le Bs_n$ because $X^2\le B$.
-Induction from the strict positivity of $f_5$ proves
+Next, $`B/A<11`$. For $`v\ge A`$ and $`n\ge5`$,
+$`B<(2n+1)v`$, while $`s_{n+1}\le Bs_n`$ because $`X^2\le B`$.
+Induction from the strict positivity of $`f_5`$ proves
 
 
 ```math
@@ -132,14 +132,14 @@ s_n<(2n-1)!!v^n\quad\hbox{and hence}\quad f_n(v)>0
 
 
 Thus the entire infinite tail, not a finite sampled segment, is controlled.
-For $v\ge1$, $f_3,f_4$ are nonnegative as well: their derivatives
-are positive there and $f_3(1)=0$, $f_4(1)=8/35$.
+For $`v\ge1`$, $`f_3,f_4`$ are nonnegative as well: their derivatives
+are positive there and $`f_3(1)=0`$, $`f_4(1)=8/35`$.
 
 ## 3. Reduce the remaining MGF comparison to a polynomial
 
-Let $z=t^2/2$. Both exponential series converge absolutely for every
-real $t$, and bounded support permits integration term by term. Since
-$(2n)!=2^n n!(2n-1)!!$,
+Let $`z=t^2/2`$. Both exponential series converge absolutely for every
+real $`t`$, and bounded support permits integration term by term. Since
+$`(2n)!=2^n n!(2n-1)!!`$,
 
 
 ```math
@@ -148,9 +148,9 @@ e^{vz}-\mathbb Ee^{tX}
 ```
 
 
-For $v\ge1$, the coefficient bounds prove that the displayed MGF
-difference is positive whenever $z>0$.
-For $A\le v\le1$, it is enough to prove
+For $`v\ge1`$, the coefficient bounds prove that the displayed MGF
+difference is positive whenever $`z>0`$.
+For $`A\le v\le1`$, it is enough to prove
 
 
 ```math
@@ -160,15 +160,15 @@ P(v,z):=\frac{(v-1)^2}{2}
 ```
 
 
-because the MGF difference is $z^2P(v,z)$ plus the nonnegative tail
-from $n=6$. The strict positivity of $f_n$ for $n\ge5$ makes that
-tail strictly positive for $z>0$. Thus even a non-strict certificate
-for $P(v,z)\ge0$ proves strictness of the MGF inequality.
+because the MGF difference is $`z^2P(v,z)`$ plus the nonnegative tail
+from $`n=6`$. The strict positivity of $`f_n`$ for $`n\ge5`$ makes that
+tail strictly positive for $`z>0`$. Thus even a non-strict certificate
+for $`P(v,z)\ge0`$ proves strictness of the MGF inequality.
 
 ## 4. An exact certificate for the finite polynomial
 
-Set $w=1-v$. The needed range lies in $0\le w\le9/20$, since
-$\sqrt6<49/20$. For $w>0$, put
+Set $`w=1-v`$. The needed range lies in $`0\le w\le9/20`$, since
+$`\sqrt6<49/20`$. For $`w>0`$, put
 
 
 ```math
@@ -185,7 +185,7 @@ R(w,r)=\frac{(1-r)^3}{w^2}
 ```
 
 
-is the following polynomial of bidegree $(6,3)$:
+is the following polynomial of bidegree $`(6,3)`$:
 
 
 ```math
@@ -216,8 +216,8 @@ Partition the rectangle into the 64 closed cells
 ```
 
 
-On each cell put $w=9(i+x)/160$, $r=(j+y)/8$. Write
-$R_+=\sum_{a,b}c_{ab}x^ay^b$. Its tensor Bernstein coefficients are
+On each cell put $`w=9(i+x)/160`$, $`r=(j+y)/8`$. Write
+$`R_+=\sum_{a,b}c_{ab}x^ay^b`$. Its tensor Bernstein coefficients are
 
 
 ```math
@@ -244,10 +244,10 @@ The digest identifies the data; the proof consists of the polynomial
 identities and coefficient signs. The Lean certificate modules prove these
 identities and signs directly in the kernel, including all cell boundaries.
 Every Bernstein basis term is nonnegative on the unit square, so
-$R_+\ge0$ on the full rectangle. Since the subtracted polynomial is
-nonnegative, this also gives $R\ge0$.
+$`R_+\ge0`$ on the full rectangle. Since the subtracted polynomial is
+nonnegative, this also gives $`R\ge0`$.
 
-Multiplying the shifted inequality by $w^2/(1-r)^3$ gives
+Multiplying the shifted inequality by $`w^2/(1-r)^3`$ gives
 
 
 ```math
@@ -255,19 +255,19 @@ P(v,z)\ge\frac{(v-1)^2+z^2}{4000}\qquad(A\le v<1,\ z\ge0).
 ```
 
 
-The inverse substitution covers every finite $z\ge0$ for $w>0$.
-At $w=0$, use $P(1,z)=z^2/105+z^3/225$ directly. This proves
+The inverse substitution covers every finite $`z\ge0`$ for $`w>0`$.
+At $`w=0`$, use $`P(1,z)=z^2/105+z^3/225`$ directly. This proves
 both the base inequality and the quantitative strengthening, with no
 restriction to sampled parameter values.
 
 ## 5. Optimality and sharpness
 
 For any centered nonzero bounded random variable, the Taylor expansion at
-zero shows that a valid Gaussian proxy $\tau^2$ must satisfy
-$\tau^2\ge\mathbb EX^2$. Hence the sharp support theorem uses the
+zero shows that a valid Gaussian proxy $`\tau^2`$ must satisfy
+$`\tau^2\ge\mathbb EX^2`$. Hence the sharp support theorem uses the
 optimal proxy.
 
-For any ratio $R>R_*$, put $q=R^2$ and choose the symmetric law
+For any ratio $`R>R_*`$, put $`q=R^2`$ and choose the symmetric law
 
 
 ```math
@@ -276,7 +276,7 @@ For any ratio $R>R_*$, put $q=R^2$ and choose the symmetric law
 ```
 
 
-It has $\mathbb EX^2=2q/(q+1)$, $\mathbb EX^4=q$, and
+It has $`\mathbb EX^2=2q/(q+1)`$, $`\mathbb EX^4=q`$, and
 
 
 ```math
@@ -286,8 +286,8 @@ It has $\mathbb EX^2=2q/(q+1)$, $\mathbb EX^4=q$, and
 
 
 The difference between its MGF and the variance-matched Gaussian MGF is
-this positive quantity times $t^4/24$, plus $O(t^6)$. Thus the MGF bound fails
-for all sufficiently small nonzero $t$. This gives a counterexample
+this positive quantity times $`t^4/24`$, plus $`O(t^6)`$. Thus the MGF bound fails
+for all sufficiently small nonzero $`t`$. This gives a counterexample
 at every larger support ratio, rather than only along a selected sequence.
 
 
@@ -301,8 +301,8 @@ A=3-\sqrt6,\qquad B=3+\sqrt6.
 ```
 
 
-In the normalized results below, let $X$ be symmetric about zero with
-$A\le X^2\le B$ almost surely, and put
+In the normalized results below, let $`X`$ be symmetric about zero with
+$`A\le X^2\le B`$ almost surely, and put
 
 
 ```math
@@ -312,7 +312,7 @@ v=\mathbb EX^2,\quad
 ```
 
 
-Then $d\ge0$, and the identity $A+B=6,AB=3$ gives
+Then $`d\ge0`$, and the identity $`A+B=6,AB=3`$ gives
 
 
 ```math
@@ -320,9 +320,9 @@ Then $d\ge0$, and the identity $A+B=6,AB=3$ gives
 ```
 
 
-Indeed, $d=6v-3-\mathbb EX^4$. Thus equality in the Gaussian
-fourth-moment inequality holds if and only if both $v=1$ and
-$d=0$. The latter equality forces $X^2\in\{A,B\}$ almost surely,
+Indeed, $`d=6v-3-\mathbb EX^4`$. Thus equality in the Gaussian
+fourth-moment inequality holds if and only if both $`v=1`$ and
+$`d=0`$. The latter equality forces $`X^2\in\{A,B\}`$ almost surely,
 because its nonnegative defining integrand vanishes only at the endpoints.
 Symmetry therefore forces the unique law
 
@@ -351,8 +351,8 @@ separate family with fourth-order contact but a different sixth moment.
 
 ## 7. Sharp local stability of the squared law
 
-Let $Y=X^2$, $Y_0=X_0^2$, and $\delta=-\kappa_4$.
-Define $W_1$ as the infimum of $\mathbb E|U-V|$ over couplings
+Let $`Y=X^2`$, $`Y_0=X_0^2`$, and $`\delta=-\kappa_4`$.
+Define $`W_1`$ as the infimum of $`\mathbb E|U-V|`$ over couplings
 of the two indicated laws. Then
 
 
@@ -364,8 +364,8 @@ of the two indicated laws. Then
 ```
 
 
-To prove this, given $Y=y$, randomly set $\widehat Y=B$ with
-probability $(y-A)/(B-A)$ and $\widehat Y=A$ otherwise. This
+To prove this, given $`Y=y`$, randomly set $`\widehat Y=B`$ with
+probability $`(y-A)/(B-A)`$ and $`\widehat Y=A`$ otherwise. This
 coupling preserves the conditional mean and satisfies
 
 
@@ -375,11 +375,11 @@ coupling preserves the conditional mean and satisfies
 ```
 
 
-The endpoint law $\widehat Y$ has mean $v$. Moving its excess
-endpoint mass to the other endpoint couples it to $Y_0$ at cost
-exactly $|v-1|$. Combine these couplings and use the triangle
+The endpoint law $`\widehat Y`$ has mean $`v`$. Moving its excess
+endpoint mass to the other endpoint couples it to $`Y_0`$ at cost
+exactly $`|v-1|`$. Combine these couplings and use the triangle
 inequality. The second bound follows from the fourth-cumulant identity,
-$d\le\delta$, and $B-A=2\sqrt6$.
+$`d\le\delta`$, and $`B-A=2\sqrt6`$.
 
 For small fourth-cumulant deficit, the exact local modulus is sharper:
 
@@ -390,24 +390,24 @@ For small fourth-cumulant deficit, the exact local modulus is sharper:
 ```
 
 
-To see this, set $h=|v-1|$. The constructive transport bound and
+To see this, set $`h=|v-1|`$. The constructive transport bound and
 the fourth-cumulant identity give
-$W_1\le h+(\delta-3h^2)/\sqrt6$, where
-$0\le h\le\sqrt{\delta/3}$. The function on the right has derivative
-$1-\sqrt6 h$. It is therefore increasing throughout this interval
-when $\delta\le1/2$, and its maximum is $\sqrt{\delta/3}$.
+$`W_1\le h+(\delta-3h^2)/\sqrt6`$, where
+$`0\le h\le\sqrt{\delta/3}`$. The function on the right has derivative
+$`1-\sqrt6 h`$. It is therefore increasing throughout this interval
+when $`\delta\le1/2`$, and its maximum is $`\sqrt{\delta/3}`$.
 
-For every $\delta\in[0,1/2]$, an endpoint law with mean
-$v=1+\sqrt{\delta/3}$ attains the local transport bound. This variance
-belongs to $[A,B]$, its interiority moment is zero, and its cumulant deficit is
-exactly $\delta$. Its transport distance from $Y_0$ is exactly
-$|v-1|$: every coupling has cost at least the difference of means,
-and moving endpoint mass attains that lower bound. Thus $\sqrt{\delta/3}$
+For every $`\delta\in[0,1/2]`$, an endpoint law with mean
+$`v=1+\sqrt{\delta/3}`$ attains the local transport bound. This variance
+belongs to $`[A,B]`$, its interiority moment is zero, and its cumulant deficit is
+exactly $`\delta`$. Its transport distance from $`Y_0`$ is exactly
+$`|v-1|`$: every coupling has cost at least the difference of means,
+and moving endpoint mass attains that lower bound. Thus $`\sqrt{\delta/3}`$
 is the sharp local modulus over the whole distribution class at each indicated
-value of $\delta$, not just an asymptotic coefficient.
+value of $`\delta`$, not just an asymptotic coefficient.
 
 Symmetric signs can be coupled identically, and the square-root map is
-$1/(2\sqrt A)$-Lipschitz on $[A,B]$. Consequently the squared-law
+$`1/(2\sqrt A)`$-Lipschitz on $`[A,B]`$. Consequently the squared-law
 transport estimate also gives
 
 
@@ -418,14 +418,14 @@ W_1(\mathcal L(X),\mathcal L(X_0))
 ```
 
 
-For $\delta\le1/2$, the parenthesis can be replaced by
-$\sqrt{\delta/3}$ using the sharp local squared-law bound. No optimal
+For $`\delta\le1/2`$, the parenthesis can be replaced by
+$`\sqrt{\delta/3}`$ using the sharp local squared-law bound. No optimal
 constant is asserted for this last, unsquared-law bound.
 
 ## 8. A global quantitative gap for every law
 
-The main proof compares the endpoint law of variance $v$ with its
-Gaussian MGF. In its notation, $z=t^2/2$ and
+The main proof compares the endpoint law of variance $`v`$ with its
+Gaussian MGF. In its notation, $`z=t^2/2`$ and
 
 
 ```math
@@ -438,7 +438,7 @@ P(v,z)={}&\frac{(v-1)^2}{2}
 ```
 
 
-For $A\le v\le1$, the same exact Bernstein construction proves the
+For $`A\le v\le1`$, the same exact Bernstein construction proves the
 stronger estimate
 
 
@@ -448,8 +448,8 @@ stronger estimate
 ```
 
 
-Here are the precise extra certificate data. Set $w=1-v$ and
-$z=7wr/(1-r)$. If
+Here are the precise extra certificate data. Set $`w=1-v`$ and
+$`z=7wr/(1-r)`$. If
 
 
 ```math
@@ -467,10 +467,10 @@ R_+(w,r)=R(w,r)-\frac{(1-r)^3+49r^2(1-r)}{4000}
 ```
 
 
-on $[0,9/20]\times[0,1]$. The 64 cells are
-$[9i/160,9(i+1)/160]\times[j/8,(j+1)/8]$,
-$0\le i,j<8$. Every coefficient in the tensor Bernstein basis of
-bidegree $(6,3)$ is nonnegative. Among the 1,792 coefficients there
+on $`[0,9/20]\times[0,1]`$. The 64 cells are
+$`[9i/160,9(i+1)/160]\times[j/8,(j+1)/8]`$,
+$`0\le i,j<8`$. Every coefficient in the tensor Bernstein basis of
+bidegree $`(6,3)`$ is nonnegative. Among the 1,792 coefficients there
 is one zero; the minimum positive coefficient is
 
 
@@ -481,13 +481,13 @@ is one zero; the minimum positive coefficient is
 
 The SHA256 of the ordered canonical Fraction strings, separated by newlines,
 is `93bb378759a066ecee34980c00e7a4a1cb518cd0044f658fddc48a216b8e3523`.
-The shifted certificate, after multiplication by $w^2/(1-r)^3$, gives
-exactly the displayed lower bound for $P(v,z)$. At $w=0$, use
-$P(1,z)=z^2/105+z^3/225$ directly.
+The shifted certificate, after multiplication by $`w^2/(1-r)^3`$, gives
+exactly the displayed lower bound for $`P(v,z)`$. At $`w=0`$, use
+$`P(1,z)=z^2/105+z^3/225`$ directly.
 The exact generator and Lean certificate modules retain this finite calculation.
 
-Let $M_v(t)$ denote the endpoint-law MGF. The main proof's nonnegative
-Taylor tail and the lower bound for $P(v,z)$ imply
+Let $`M_v(t)`$ denote the endpoint-law MGF. The main proof's nonnegative
+Taylor tail and the lower bound for $`P(v,z)`$ imply
 
 
 ```math
@@ -496,14 +496,14 @@ e^{vt^2/2}-M_v(t)
 ```
 
 
-For $v\ge1$, the same estimate follows without the shifted certificate:
-the second and fourth coefficients in the $z$-series are at least
-$(v-1)^2/2$ and $1/105$, respectively, and every other coefficient
+For $`v\ge1`$, the same estimate follows without the shifted certificate:
+the second and fourth coefficients in the $`z`$-series are at least
+$`(v-1)^2/2`$ and $`1/105`$, respectively, and every other coefficient
 is nonnegative. Thus the displayed endpoint MGF gap holds for every
-$v\in[A,B]$.
+$`v\in[A,B]`$.
 
 There is also a quantitative endpoint reduction. The function
-$g(y)=\cosh(t\sqrt y)$ satisfies
+$`g(y)=\cosh(t\sqrt y)`$ satisfies
 
 
 ```math
@@ -512,7 +512,7 @@ g''(y)\ge\frac{t^4}{12}\qquad(y\ge0),
 
 
 by differentiating its power series. Consequently
-$g(y)-t^4y^2/24$ is convex. Its chord on $[A,B]$ gives
+$`g(y)-t^4y^2/24`$ is convex. Its chord on $`[A,B]`$ gives
 
 
 ```math
@@ -544,12 +544,12 @@ In particular, the fourth-cumulant identity implies the simpler intrinsic form
 
 The numerical constants in these two quantitative gap bounds are certified,
 not asserted optimal.
-For every admissible law the MGF inequality is strict at every $t\ne0$;
-its only equality parameter is $t=0$.
+For every admissible law the MGF inequality is strict at every $`t\ne0`$;
+its only equality parameter is $`t=0`$.
 
-For the original support condition $0<a\le|X|\le b$ with
-$b/a\le\sqrt3+\sqrt2$, apply the intrinsic gap bound to $\sqrt A\,X/a$.
-With $v=\mathbb EX^2$ and the original fourth cumulant, this yields
+For the original support condition $`0<a\le|X|\le b`$ with
+$`b/a\le\sqrt3+\sqrt2`$, apply the intrinsic gap bound to $`\sqrt A\,X/a`$.
+With $`v=\mathbb EX^2`$ and the original fourth cumulant, this yields
 
 
 ```math
@@ -573,19 +573,19 @@ H(x)=x^4-6x^2+3
 
 
 is the monic probabilists' fourth Hermite polynomial. Its roots are precisely
-$\pm\sqrt A,\pm\sqrt B$. The probabilists' normalization is important:
-the relevant Gaussian weight is $e^{-x^2/2}$, not $e^{-x^2}$.
+$`\pm\sqrt A,\pm\sqrt B`$. The probabilists' normalization is important:
+the relevant Gaussian weight is $`e^{-x^2/2}`$, not $`e^{-x^2}`$.
 [NIST DLMF, Table 18.3.1](https://dlmf.nist.gov/18.3#T1) records the two
 normalizations; [DLMF §3.5(v)](https://dlmf.nist.gov/3.5#v) records Gaussian
 quadrature at orthogonal-polynomial roots and its degree-of-exactness rule.
 
-Here the quadrature identification can be checked directly. If $Z$ is
-standard Gaussian, then $\mathbb E[H(Z)q(Z)]=0$ for every polynomial
-$q$ of degree at most three, using the normal moments and parity.
-Every polynomial $f$ of degree at most seven has a division
-$f=Hq+r$, with $\deg q\le3$ and $\deg r\le3$.
-The critical law $X_0$ and $Z$ agree on all moments through degree
-three, while $H(X_0)=0$ almost surely. Therefore
+Here the quadrature identification can be checked directly. If $`Z`$ is
+standard Gaussian, then $`\mathbb E[H(Z)q(Z)]=0`$ for every polynomial
+$`q`$ of degree at most three, using the normal moments and parity.
+Every polynomial $`f`$ of degree at most seven has a division
+$`f=Hq+r`$, with $`\deg q\le3`$ and $`\deg r\le3`$.
+The critical law $`X_0`$ and $`Z`$ agree on all moments through degree
+three, while $`H(X_0)=0`$ almost surely. Therefore
 
 
 ```math
@@ -593,7 +593,7 @@ three, while $H(X_0)=0$ almost surely. Therefore
 ```
 
 
-Thus $X_0$ is exactly the four-node Gaussian quadrature law for the standard
+Thus $`X_0`$ is exactly the four-node Gaussian quadrature law for the standard
 normal measure. In particular,
 
 
@@ -613,11 +613,11 @@ e^{t^2/2}-\mathbb Ee^{tX_0}
 
 
 and the same leading coefficient holds for
-$t^2/2-\log\mathbb Ee^{tX_0}$.
+$`t^2/2-\log\mathbb Ee^{tX_0}`$.
 
 There is a direct quadrature proof of strict sub-Gaussianity for this one
-law. Let $h$, of degree at most seven, interpolate $f$ and $f'$
-at the four roots of $H$. Hermite's interpolation remainder gives
+law. Let $`h`$, of degree at most seven, interpolate $`f`$ and $`f'`$
+at the four roots of $`H`$. Hermite's interpolation remainder gives
 
 
 ```math
@@ -625,11 +625,11 @@ f(x)-h(x)=\frac{f^{(8)}(\xi_x)}{8!}H(x)^2.
 ```
 
 
-If $f\in C^8(\mathbb R)$, $\mathbb E|f(Z)|<\infty$, and
-$f^{(8)}\ge0$, integrating and using exactness for polynomials of degree
+If $`f\in C^8(\mathbb R)`$, $`\mathbb E|f(Z)|<\infty`$, and
+$`f^{(8)}\ge0`$, integrating and using exactness for polynomials of degree
 at most seven yields
-$\mathbb Ef(Z)\ge\mathbb Ef(X_0)$. For $f(x)=e^{tx}$ and
-$t\ne0$, the remainder is positive away from the four nodes, giving
+$`\mathbb Ef(Z)\ge\mathbb Ef(X_0)`$. For $`f(x)=e^{tx}`$ and
+$`t\ne0`$, the remainder is positive away from the four nodes, giving
 strict inequality. This is the usual Gaussian-quadrature remainder mechanism;
 it is consistent with the general error formula in
 [DLMF equations 3.5.19–20](https://dlmf.nist.gov/3.5#E19).
