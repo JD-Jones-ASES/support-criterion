@@ -128,6 +128,52 @@ theorem local_transport_attainment (δ : ℝ) (hδ : 0 ≤ δ) (hδ' : δ ≤ 1/
     IsProbabilityMeasure μ ∧ Symmetric μ ∧ NormalizedSupport μ ∧ fourthDeficit μ = δ ∧
       wassersteinOne (squaredLaw μ) (squaredLaw criticalLaw) = Real.sqrt (δ/3) := by sorry
 
+
+theorem normalized_sharp_gap (μ : Measure ℝ) [IsProbabilityMeasure μ]
+    (hμ : NormalizedSupport μ) (hs : Symmetric μ) (t : ℝ) :
+    interiority μ*t^4/24+t^8/25200 ≤
+      Real.exp (variance μ*t^2/2)-mgf μ t := by sorry
+
+theorem normalized_sharp_gap_strict (μ : Measure ℝ) [IsProbabilityMeasure μ]
+    (hμ : NormalizedSupport μ) (hs : Symmetric μ) (t : ℝ) (ht : t ≠ 0) :
+    interiority μ*t^4/24+t^8/25200 <
+      Real.exp (variance μ*t^2/2)-mgf μ t := by sorry
+
+theorem scaled_sharp_gap (μ : Measure ℝ) [IsProbabilityMeasure μ]
+    (a b : ℝ) (ha : 0 < a) (hμ : BandSupport μ a b) (hs : Symmetric μ)
+    (hr : b/a ≤ sharpRatio) (t : ℝ) :
+    a^8/(25200*lowerSq^4)*t^8 ≤
+      Real.exp (variance μ*t^2/2)-mgf μ t := by sorry
+
+theorem sharp_gap_coefficient_le (c : ℝ)
+    (h : ∀ (μ : Measure ℝ) [IsProbabilityMeasure μ], NormalizedSupport μ →
+      Symmetric μ → ∀ t : ℝ,
+        c*t^8 ≤ Real.exp (variance μ*t^2/2)-mgf μ t) : c ≤ 1/25200 := by sorry
+
+theorem interiority_gap_coefficient_le (c : ℝ)
+    (h : ∀ (μ : Measure ℝ) [IsProbabilityMeasure μ], NormalizedSupport μ →
+      Symmetric μ → ∀ t : ℝ,
+        c*interiority μ*t^4 ≤ Real.exp (variance μ*t^2/2)-mgf μ t) : c ≤ 1/24 := by sorry
+
+theorem sharp_gap_intrinsic_coefficient_nonpos (c : ℝ)
+    (h : ∀ (μ : Measure ℝ) [IsProbabilityMeasure μ], NormalizedSupport μ →
+      Symmetric μ → ∀ t : ℝ,
+        t^8/25200+c*fourthDeficit μ*t^4 ≤ Real.exp (variance μ*t^2/2)-mgf μ t) : c ≤ 0 := by sorry
+
+theorem global_squared_transport (μ : Measure ℝ) [IsProbabilityMeasure μ]
+    (hμ : NormalizedSupport μ) :
+    wassersteinOne (squaredLaw μ) (squaredLaw criticalLaw) ≤
+      Real.sqrt (fourthDeficit μ/3) := by sorry
+
+theorem fourth_deficit_range (μ : Measure ℝ) [IsProbabilityMeasure μ]
+    (hμ : NormalizedSupport μ) :
+    0 ≤ fourthDeficit μ ∧ fourthDeficit μ ≤ 2*upperSq^2 := by sorry
+
+theorem global_transport_attainment (δ : ℝ) (hδ : 0 ≤ δ) (hδ' : δ ≤ 2*upperSq^2) :
+    let μ := endpointLaw (1+Real.sqrt (δ/3))
+    IsProbabilityMeasure μ ∧ Symmetric μ ∧ NormalizedSupport μ ∧ fourthDeficit μ = δ ∧
+      wassersteinOne (squaredLaw μ) (squaredLaw criticalLaw) = Real.sqrt (δ/3) := by sorry
+
 theorem mgf_definition (μ : Measure ℝ) (t : ℝ) :
     mgf μ t = ∫ x, Real.exp (t*x) ∂μ := by sorry
 

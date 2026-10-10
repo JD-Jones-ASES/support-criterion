@@ -38,15 +38,24 @@ When `A ≤ X² ≤ B` almost surely,
 \delta=3(v-1)^2+d\ge0.
 ```
 
-The global quantitative estimate is
+The sharp quantitative estimate is
+
+```math
+e^{vt^2/2}-\mathbb Ee^{tX}
+\ge \frac{d}{24}t^4+\frac{t^8}{25200}.
+```
+
+Both coefficients are optimal. [SharpGap.md](SharpGap.md) gives the exact
+certificate and limiting examples. The separate intrinsic-deficit estimate is
 
 ```math
 e^{vt^2/2}-\mathbb Ee^{tX}
 \ge \frac{\delta}{48000}t^4+\frac{t^8}{64000}.
 ```
 
-The constants in this estimate are certified; no optimality is asserted
-for them. In the original scale its right side is
+The constants in this intrinsic estimate are certified; no optimality is
+asserted for them. In particular, the sharp eighth-order constant cannot
+replace `1/64000` while retaining a positive `δt⁴` term. In the original scale its right side is
 
 ```math
 \frac{3(\mathbb EX^2)^2-\mathbb EX^4}{48000}t^4
@@ -64,17 +73,18 @@ p_0=\frac{\sqrt6-2}{2\sqrt6}.
 This is equality in the fourth-moment inequality. Its MGF inequality is
 still strict at every nonzero parameter.
 
-For the ordinary Wasserstein distance of order one, the sharp local
+For the ordinary Wasserstein distance of order one, the sharp global
 stability statement concerns the **squared laws**:
 
 ```math
-0\le\delta\le\tfrac12
+0\le\delta\le30+12\sqrt6
 \quad\Longrightarrow\quad
 W_1(\mathcal L(X^2),\mathcal L(X_0^2))\le\sqrt{\delta/3}.
 ```
 
-For every deficit in this range an endpoint law attains equality. Thus the
-constant and the displayed modulus are exact on the stated interval.
+This is the entire feasible deficit range. At every value an endpoint law
+attains equality, so the displayed modulus is exact throughout. Symmetry
+is unnecessary for this squared-law theorem.
 Here `W₁` is the infimum of expected absolute distance over all couplings
 of the two laws; bounded support makes its cost finite.
 
@@ -156,7 +166,9 @@ M_v(t)-\mathbb Ee^{tX}\ge d\,t^4/24,
 ```
 
 because `g_t(y)−t⁴y²/24` is convex. Combining this with the endpoint
-estimate and `δ=3(v−1)²+d` gives the stated quantitative gap.
+estimate and `δ=3(v−1)²+d` gives the retained intrinsic-deficit gap.
+The sharp `1/25200` estimate uses the additional sixth moment and separate
+bidegree-`(8,4)` certificate in [SharpGap.md](SharpGap.md).
 
 ## Sharpness and rigidity
 
@@ -192,11 +204,29 @@ W_1(\mathcal L(Y),\mathcal L(X_0^2))
 \le |v-1|+d/\sqrt6.
 ```
 
-Put `h=|v−1|`. For `δ≤1/2`, the function
-`h+(δ−3h²)/√6` is increasing on `0≤h≤√(δ/3)`; its maximum is
-`√(δ/3)`. The law of `Y` supported on `{A,B}` with mean `1+√(δ/3)` has
-`d=0`, has deficit `δ`, and attains this cost. Every coupling costs at least the absolute
-difference of means, which proves attainment for the actual distance.
+Keeping the exact affine coupling cost yields the stronger global bound.
+Put `p=A/6`, `α=B/6`, and `q=EX⁴`. In the branch `v≥1`, assign `y` to
+`B` with probability `p(y−A)/(v−A)`; in the other branch assign it to
+`A` with probability `α(B−y)/(B−v)`. The resulting costs are
+
+```math
+ C_+=v-1+\frac{2pd}{v-A},\qquad
+ C_-=1-v+\frac{2\alpha d}{B-v}.
+```
+
+Their exact remainders satisfy
+
+```math
+ \delta-3C_+^2=\frac{12p^2d(q-v^2)}{(v-A)^2}\ge0,\qquad
+ \delta-3C_-^2=\frac{12\alpha^2d(q-v^2)}{(B-v)^2}\ge0.
+```
+
+Thus `W₁≤√(δ/3)` without a small-deficit restriction. The endpoint law of
+mean `1+√(δ/3)` exists for every feasible deficit because
+`3(B−1)²=2B²`. It attains the bound: moving excess endpoint mass costs
+exactly the difference of means, a lower bound for every coupling.
+[GlobalTransport.md](GlobalTransport.md) gives the full proof and its
+written equality and higher-order extensions.
 
 ## Gaussian quadrature and applications
 
@@ -221,5 +251,5 @@ positive magnitude band.
 [Proof.md](Proof.md) gives the full mathematical argument, and
 [VERIFICATION.md](VERIFICATION.md) specifies the formal scope and completed
 checks. The optimized local worst-law asymptotic and full conditional
-concentration development are written supplements. Optimal numerical
-MGF-gap constants remain an open question.
+concentration development are written supplements. The optimal eighth-order
+MGF-gap coefficient is resolved by the separate sharp certificate.

@@ -110,3 +110,23 @@ realized squared increments. The support criterion permits actual
 conditional variances in the Gaussian MGF bound. Conditional and
 time-uniform applications remain explanatory material unless separately
 listed among the verified declarations.
+
+## Global transport refinement and priority boundary
+
+[GlobalTransport.md](GlobalTransport.md) retains a Wasserstein term in the
+classical Kantorovich moment comparison. Its explicit affine-coupling
+remainder also identifies all equality laws. The exact normalized modulus
+and sharp eighth-order coefficient are proved in this repository; the
+bounded source review does not establish worldwide priority for either
+statement or the general interval refinement.
+
+**Alqahtani, Sarikaya.** *Refined Weighted Schweitzer-Type Inequalities With
+Applications to Statistical Moments*, Journal of Mathematics 2026,
+article 4822611, published September 7, 2026.
+[Publisher record](https://onlinelibrary.wiley.com/doi/10.1155/jom/4822611).
+
+The accessible publisher text concerns weighted reciprocal-moment products
+and moment-based stability. Its displayed equations were not fully available
+in the retrieval used here. No matching Wasserstein result was identified,
+but a formula-by-formula exclusion is not claimed. The direct proof above
+does not depend on this source.

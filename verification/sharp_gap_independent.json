@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "method": "exact interpolation, de Casteljau subdivision, unisolvent cell replay",
+  "bidegree": [
+    8,
+    4
+  ],
+  "cells": 64,
+  "coefficients": 2880,
+  "negative_coefficients": 0,
+  "zero_coefficients": 7,
+  "zero_locations": [
+    [
+      0,
+      3,
+      0,
+      3
+    ],
+    [
+      0,
+      3,
+      0,
+      4
+    ],
+    [
+      0,
+      4,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      0,
+      1
+    ],
+    [
+      0,
+      7,
+      0,
+      3
+    ],
+    [
+      0,
+      7,
+      0,
+      4
+    ],
+    [
+      0,
+      7,
+      1,
+      4
+    ]
+  ],
+  "minimum_positive_coefficient": "27/1835008",
+  "exact_cell_evaluations": 2880,
+  "coefficient_sha256": "e94c6c378471cf27f639f7aef4de4a114683a37136d6ebd98a84eda1edfded61",
+  "w_zero_boundary": "(1-r)^2*(1-2*r)^2/2",
+  "parent_or_repository_imports": false
+}

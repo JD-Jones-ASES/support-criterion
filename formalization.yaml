@@ -10,12 +10,13 @@ project:
     variance is the optimal quadratic proxy. An explicit symmetric law on
     {-R,-1,1,R} violates the bound near zero for each larger ratio R.
     In the normalization 3-sqrt(6) <= X^2 <= 3+sqrt(6), the development
-    also establishes a uniform quantitative MGF gap, identifies the unique
-    law with Gaussian fourth-moment contact, and proves the sharp local
-    Wasserstein bound for the squared law at every fourth-cumulant deficit
-    between zero and one half, including attainment. The proof combines a
-    convex endpoint reduction, control of the entire moment tail, a finite
-    exact rational Bernstein certificate, and an explicit transport coupling.
+    also establishes the sharp eighth-order MGF gap with its optimal
+    interiority coefficient, identifies the unique law with Gaussian
+    fourth-moment contact, and proves the sharp global Wasserstein bound
+    for the squared law at every feasible fourth-cumulant deficit, including
+    attainment. The proof combines a convex endpoint reduction, control of
+    the entire moment tail, exact rational Bernstein certificates, and an
+    explicit affine transport coupling.
   authors:
     - JD Jones
   responsible_maintainers:
@@ -30,7 +31,7 @@ status:
   scope: >-
     The five principal groups are the universal support criterion with proxy
     optimality, ratio sharpness, quantitative MGF separation, fourth-moment
-    rigidity, and sharp local stability for squared laws with attainment.
+    rigidity, and sharp global stability for squared laws with attainment.
     The independent Challenge also records the semantics of its ordinary
     probability and transport definitions. Exact-commit Linux verification
     is recorded in VERIFICATION.md.
@@ -72,13 +73,15 @@ sources:
 automation:
   methods:
     - method: agent
-      models: [GPT-6 Astra]
+      models: [GPT-6 Astra, GPT-6 Pro]
       framework: OpenAI Codex
       tool_setup: OpenAI Codex with GPT-6 Astra; Lean 4 and Mathlib at committed revisions.
       notes: >-
         Agents developed the proof, generated exact rational certificate data,
         implemented the Lean development, checked primary sources, and reviewed
-        the statements. Lean checks the generated identities and inequalities;
+        the statements. A GPT-6 Pro consultation supplied the sharp-gap and
+        global-transport arguments; Codex agents independently checked and
+        formalized the extensions. Lean checks the generated identities and inequalities;
         Python execution is not a proof premise. Disclosure.md gives the
         production account. Verification commands and exact-commit records are
         maintained separately.
@@ -92,6 +95,7 @@ review:
     recorded in VERIFICATION.md. No human specialist review is asserted.
 
 limitations:
-  - The numerical constants in the quantitative MGF gap are not asserted optimal.
-  - The sharp Wasserstein modulus concerns squared laws and deficits in [0, 1/2].
+  - The older intrinsic-deficit bound is retained; its numerical coefficients are not asserted optimal.
+  - The general interval transport theorem, equality classification, and higher Wasserstein orders are written supplements.
+  - The unsquared-law transport prefactor is not asserted optimal.
   - Conditional concentration and optimized local worst-law asymptotics are explanatory supplements.

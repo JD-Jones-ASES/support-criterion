@@ -9,8 +9,10 @@ argument is presented in [Proof.md](Proof.md), with an overview in
 
 OpenAI Codex assisted with the Lean formalization, proof development, exact
 certificate generation, source review and documentation. Separate agent
-reviews checked the mathematical scope and the proof interfaces. These are
-automated internal reviews. No human specialist review is asserted.
+reviews checked the mathematical scope and the proof interfaces. A GPT-6 Pro research consultation supplied the sharp eighth-order
+certificate and the global affine-transport argument. Codex agents independently
+checked those arguments and exact certificate data before integrating the
+extensions and their formal proofs. These are automated internal reviews. No human specialist review is asserted.
 
 Python regenerates rational certificate data and checks supporting identities.
 The formal proof does not trust a Python exit status: Lean verifies every

@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "positive_cell_control": "PASS",
+  "controls": [
+    {
+      "name": "changed positive coefficient",
+      "status": "REJECTED",
+      "reason": "cell identity failed: 0,0 at 0,0"
+    },
+    {
+      "name": "negative coefficient",
+      "status": "REJECTED",
+      "reason": "negative Bernstein coefficient"
+    },
+    {
+      "name": "missing coefficient",
+      "status": "REJECTED",
+      "reason": "cell coefficient count changed"
+    },
+    {
+      "name": "wrong cell placement",
+      "status": "REJECTED",
+      "reason": "cell identity failed: 0,1 at 0,0"
+    },
+    {
+      "name": "changed compact polynomial",
+      "status": "REJECTED",
+      "reason": "cell identity failed: 0,0 at 0,0"
+    },
+    {
+      "name": "missing cell",
+      "status": "REJECTED",
+      "reason": "certificate coefficient count changed"
+    }
+  ]
+}

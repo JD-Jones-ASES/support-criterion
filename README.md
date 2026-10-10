@@ -1,7 +1,7 @@
 # support-criterion
 
 A sharp universal support criterion for symmetric sub-Gaussian laws, with
-quantitative separation, critical-law rigidity and sharp local transport stability.
+optimal eighth-order separation, critical-law rigidity and sharp global transport stability.
 
 If a real random variable has a law symmetric about zero and
 `0 < a ≤ |X| ≤ b` almost surely, then
@@ -25,21 +25,22 @@ support in `[A,B]`, write `v = EX²`, `δ = 3v²−EX⁴`, and
 ```math
 \delta=3(v-1)^2+d,\qquad
  e^{vt^2/2}-\mathbb Ee^{tX}
- \ge\frac{\delta t^4}{48000}+\frac{t^8}{64000}.
+ \ge\frac{d t^4}{24}+\frac{t^8}{25200}.
 ```
 
 Among symmetric laws in these bands, zero fourth deficit identifies the
 four-node Gaussian quadrature law `X₀`, with total outer-node weight
 `(√6−2)/(2√6)`.
-For `0 ≤ δ ≤ 1/2`, the squared laws obey
+For every feasible deficit `0 ≤ δ ≤ 30+12√6`, the squared laws obey
 
 ```math
 W_1(\mathcal L(X^2),\mathcal L(X_0^2))\le\sqrt{\delta/3}.
 ```
 
-This transport bound is attained for every deficit in the stated interval.
-The support ratio and transport modulus are sharp; the displayed MGF
-constants are certified and are not asserted optimal.
+This transport bound is attained at every feasible deficit, and needs no
+symmetry assumption on `X`. Both displayed MGF coefficients are optimal.
+The separate intrinsic bound `δt⁴/48000 + t⁸/64000` remains available; a
+positive `δt⁴` term cannot be combined with the optimal `t⁸/25200` term.
 
 The proof reduces arbitrary laws to endpoint mixtures by a strengthened
 convex chord inequality. An exact moment recurrence controls the entire
@@ -49,6 +50,8 @@ ordinary Wasserstein distance defined by the infimum over all couplings.
 
 - [Note.md](Note.md): theorem statements and explanation.
 - [Proof.md](Proof.md): full mathematical argument and quadrature connection.
+- [SharpGap.md](SharpGap.md): sharp MGF constant, exact certificate and optimality.
+- [GlobalTransport.md](GlobalTransport.md): global transport proof, equality and higher-order supplements.
 - [Sources.md](Sources.md): primary sources and precise comparisons.
 - [Applications.md](Applications.md): concentration applications.
 - [Asymptotics.md](Asymptotics.md): written local worst-law asymptotics.
@@ -64,6 +67,8 @@ supporting certificate with:
 lake build
 python3 scripts/generate_certificate.py --check
 python3 scripts/independent_certificate_check.py
+python3 scripts/generate_sharp_gap_certificate.py --check
+python3 scripts/independent_sharp_gap_check.py
 python3 scripts/check_sources.py
 python3 scripts/audit_axioms.py
 ```

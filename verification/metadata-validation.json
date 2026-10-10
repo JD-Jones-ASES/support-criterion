@@ -7,7 +7,7 @@
     "normalized_provenance"
   ],
   "yaml_parser": "PyYAML 6.0.3",
-  "formalization_sha256": "231021f64002c730294bf2a269de6fb5ee3e34e07076bff0b9d22a76f04264f6",
+  "formalization_sha256": "ac0e6b89e3965a6395794a51074aa358fa2c4ffbb38ca32e1de75b95e6358dbc",
   "validator_file_sha256": {
     "scripts/submission_contract.py": "724f82211ef702e2d1b4e5012183e532bd8f8ba03ba676022e4722a420c5be75",
     "scripts/orcid_validation.py": "2f368bf27a27f150da1a03f502ff0f45845fce1d5ebcf8dcfcf10908b5d360b7",

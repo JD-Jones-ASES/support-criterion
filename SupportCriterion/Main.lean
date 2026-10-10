@@ -7,6 +7,9 @@ public import SupportCriterion.ProxyOptimality
 public import SupportCriterion.Sharpness
 public import SupportCriterion.Rigidity
 public import SupportCriterion.TransportFinal
+public import SupportCriterion.TransportGlobal
+public import SupportCriterion.SharpGapScaling
+public import SupportCriterion.GapOptimality
 
 @[expose] public section
 
@@ -108,5 +111,24 @@ theorem local_transport_attainment (δ : ℝ) (hδ : 0 ≤ δ) (hδ' : δ ≤ 1/
     IsProbabilityMeasure μ ∧ Symmetric μ ∧ NormalizedSupport μ ∧ fourthDeficit μ = δ ∧
       wassersteinOne (squaredLaw μ) (squaredLaw criticalLaw) = Real.sqrt (δ/3) :=
   sharp_local_stability_attained hδ hδ'
+
+
+/-- Sharp global modulus for the ordinary first Wasserstein distance of squared laws. -/
+theorem global_squared_transport (μ : Measure ℝ) [IsProbabilityMeasure μ]
+    (hμ : NormalizedSupport μ) :
+    wassersteinOne (squaredLaw μ) (squaredLaw criticalLaw) ≤
+      Real.sqrt (fourthDeficit μ/3) := sharp_global_stability μ hμ
+
+/-- The complete feasible fourth-deficit interval. -/
+theorem fourth_deficit_range (μ : Measure ℝ) [IsProbabilityMeasure μ]
+    (hμ : NormalizedSupport μ) :
+    0 ≤ fourthDeficit μ ∧ fourthDeficit μ ≤ 2*upperSq^2 := fourthDeficit_global_range μ hμ
+
+/-- Attainment at every deficit in the entire feasible interval. -/
+theorem global_transport_attainment (δ : ℝ) (hδ : 0 ≤ δ) (hδ' : δ ≤ 2*upperSq^2) :
+    let μ := endpointLaw (1+Real.sqrt (δ/3))
+    IsProbabilityMeasure μ ∧ Symmetric μ ∧ NormalizedSupport μ ∧ fourthDeficit μ = δ ∧
+      wassersteinOne (squaredLaw μ) (squaredLaw criticalLaw) = Real.sqrt (δ/3) :=
+  sharp_global_stability_attained hδ hδ'
 
 end SupportCriterion

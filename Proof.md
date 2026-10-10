@@ -126,7 +126,7 @@ Induction from the strict positivity of $`f_5`$ proves
 
 
 ```math
-s_n<(2n-1)!!v^n\quad\hbox{and hence}\quad f_n(v)>0
+s_n<(2n-1)!!v^n\quad\text{and hence}\quad f_n(v)>0
 \qquad(n\ge5).
 ```
 
@@ -349,81 +349,80 @@ inside the squared-support interval. In particular, Gaussian fourth-moment
 contact in these bands already forces sixth-moment contact; there is no
 separate family with fourth-order contact but a different sixth moment.
 
-## 7. Sharp local stability of the squared law
+## 7. Sharp global stability of the squared law
 
-Let $`Y=X^2`$, $`Y_0=X_0^2`$, and $`\delta=-\kappa_4`$.
-Define $`W_1`$ as the infimum of $`\mathbb E|U-V|`$ over couplings
-of the two indicated laws. Then
-
-
-```math
-\boxed{
- W_1(\mathcal L(Y),\mathcal L(Y_0))
- \le |v-1|+\frac{2d}{B-A}
- \le\sqrt{\frac\delta3}+\frac\delta{\sqrt6}.}
-```
-
-
-To prove this, given $`Y=y`$, randomly set $`\widehat Y=B`$ with
-probability $`(y-A)/(B-A)`$ and $`\widehat Y=A`$ otherwise. This
-coupling preserves the conditional mean and satisfies
-
+Let `Y=X²`, `Y₀=X₀²`, `v=EY`, `q=EY²`, and `δ=3v²−q`.
+Symmetry is unnecessary in this section. The ordinary first Wasserstein
+distance is the infimum of expected absolute distance over all couplings.
+Then
 
 ```math
-\mathbb E[|Y-\widehat Y|\mid Y=y]
- =\frac{2(y-A)(B-y)}{B-A}.
+ \boxed{W_1(\mathcal L(Y),\mathcal L(Y_0))\le\sqrt{\delta/3}.}
 ```
 
+The feasible deficit interval is exactly `0≤δ≤2B²=30+12√6`, and the bound
+is attained at every value in that interval. This extends the earlier local
+conclusion without changing its statement or validity.
 
-The endpoint law $`\widehat Y`$ has mean $`v`$. Moving its excess
-endpoint mass to the other endpoint couples it to $`Y_0`$ at cost
-exactly $`|v-1|`$. Combine these couplings and use the triangle
-inequality. The second bound follows from the fourth-cumulant identity,
-$`d\le\delta`$, and $`B-A=2\sqrt6`$.
-
-For small fourth-cumulant deficit, the exact local modulus is sharper:
-
+Here is the exact affine coupling argument. Put `p=A/6`, `α=B/6`, and
+`d=6v−3−q≥0`. If `v≥1`, assign `Y=y` to `B` with probability
+`p(y−A)/(v−A)` and otherwise to `A`. If `v≤1`, assign it to `A` with
+probability `α(B−y)/(B−v)` and otherwise to `B`. The branch denominators
+are positive, the weights lie in `[0,1]`, and their expectations are the
+reference weights. These are couplings to `Y₀`, with respective costs
 
 ```math
-\boxed{W_1(\mathcal L(Y),\mathcal L(Y_0))
-        \le\sqrt{\delta/3}\qquad(0\le\delta\le1/2).}
+ C_+=v-1+\frac{2pd}{v-A},\qquad
+ C_-=1-v+\frac{2\alpha d}{B-v}.
 ```
 
-
-To see this, set $`h=|v-1|`$. The constructive transport bound and
-the fourth-cumulant identity give
-$`W_1\le h+(\delta-3h^2)/\sqrt6`$, where
-$`0\le h\le\sqrt{\delta/3}`$. The function on the right has derivative
-$`1-\sqrt6 h`$. It is therefore increasing throughout this interval
-when $`\delta\le1/2`$, and its maximum is $`\sqrt{\delta/3}`$.
-
-For every $`\delta\in[0,1/2]`$, a law of $`Y`$ supported on $`\{A,B\}`$
-with mean $`v=1+\sqrt{\delta/3}`$ attains the local transport bound.
-This mean belongs to $`[A,B]`$ and is the variance of the associated
-symmetric $`X`$. Its interiority moment is zero, and its cumulant deficit is
-exactly $`\delta`$. Its transport distance from $`Y_0`$ is exactly
-$`|v-1|`$: every coupling has cost at least the difference of means,
-and moving endpoint mass attains that lower bound. Thus $`\sqrt{\delta/3}`$
-is the sharp local modulus over the whole distribution class at each indicated
-value of $`\delta`$, not just an asymptotic coefficient.
-
-Symmetric signs can be coupled identically, and the square-root map is
-$`1/(2\sqrt A)`$-Lipschitz on $`[A,B]`$. Consequently the squared-law
-transport estimate also gives
-
+Their exact remainders are
 
 ```math
-W_1(\mathcal L(X),\mathcal L(X_0))
- \le\frac{1}{2\sqrt A}
-       \left(\sqrt{\frac\delta3}+\frac\delta{\sqrt6}\right).
+ \delta-3C_+^2=\frac{12p^2d(q-v^2)}{(v-A)^2},\qquad
+ \delta-3C_-^2=\frac{12\alpha^2d(q-v^2)}{(B-v)^2}.
 ```
 
+Since `q−v²=E(Y−v)²≥0`, each nonnegative cost is at most `√(δ/3)`.
+This proves the claim for the actual coupling infimum. Bounded support
+ensures all these transport costs and the infimum are finite.
 
-For $`\delta\le1/2`$, the parenthesis can be replaced by
-$`\sqrt{\delta/3}`$ using the sharp local squared-law bound. No optimal
-constant is asserted for this last, unsquared-law bound.
+The moment inequalities give `δ≤2v²≤2B²`. Conversely,
+`3(B−1)²=2B²` shows that the endpoint law of mean
+`v=1+√(δ/3)` is admissible for every `δ∈[0,2B²]`. Its interiority is zero,
+its deficit is exactly `δ`, and transporting its excess endpoint mass has
+cost `v−1`. Every coupling has cost at least the difference of means, so
+this law attains the exact modulus.
+
+[GlobalTransport.md](GlobalTransport.md) gives the general interval theorem
+behind these identities. It also proves the complete equality classification,
+sharp bounds for every finite Wasserstein order, and the signed-law
+consequence
+
+```math
+ W_1(\mathcal L(X),\mathcal L(X_0))
+ \le\frac1{2\sqrt A}\sqrt{\delta/3}
+```
+
+for symmetric `X`. These additional conclusions are written supplements;
+no optimality is asserted for the last signed-law prefactor.
 
 ## 8. A global quantitative gap for every law
+
+The optimal eighth-order estimate is
+
+```math
+ \boxed{e^{vt^2/2}-\mathbb Ee^{tX}
+       \ge\frac{d t^4}{24}+\frac{t^8}{25200}.}
+```
+
+[SharpGap.md](SharpGap.md) proves this using one additional endpoint moment
+and a separate bidegree-`(8,4)` rational certificate. It proves optimality
+of both displayed coefficients. The explicit path `v_t=1−t²/15` also shows
+that a positive `δt⁴` term cannot coexist with the sharp eighth-order term.
+The earlier intrinsic-deficit estimate below therefore remains useful.
+
+### The retained intrinsic-deficit estimate
 
 The main proof compares the endpoint law of variance $`v`$ with its
 Gaussian MGF. In its notation, $`z=t^2/2`$ and
@@ -544,8 +543,10 @@ In particular, the fourth-cumulant identity implies the simpler intrinsic form
 ```
 
 
-The numerical constants in these two quantitative gap bounds are certified,
-not asserted optimal.
+The displacement and intrinsic-deficit coefficients and the eighth-order
+coefficient `1/64000` in these retained bounds are certified, with no
+optimality asserted. The interiority coefficient `1/24` is sharp, as proved
+in [SharpGap.md](SharpGap.md).
 For every admissible law the MGF inequality is strict at every $`t\ne0`$;
 its only equality parameter is $`t=0`$.
 

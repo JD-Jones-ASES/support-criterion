@@ -1,6 +1,8 @@
 # Local asymptotics of the worst endpoint law
 
-This is a written supplement outside the formal contract. Here $`M_v(t)`$ is
+The full optimizer expansion is a written supplement. The sharp global
+coefficient is proved in [SharpGap.md](SharpGap.md); its formal status is
+recorded in [VERIFICATION.md](VERIFICATION.md). Here $`M_v(t)`$ is
 the endpoint-mixture MGF of variance $`v`$ from [Proof.md](Proof.md), with
 $`A=3-\sqrt6`$ and $`B=3+\sqrt6`$.
 
@@ -72,6 +74,8 @@ The expansion of the maximum distinguishes a fixed exceptional law from the wors
 allowed to depend on $`t`$. The latter has variance slightly below one.
 It also shows that any universal inequality
 $`e^{vt^2/2}-\mathbb Ee^{tX}\ge c\,t^8`$ on $`\mathcal C`$ must
-have $`c\le1/25200`$. The exhibited bound has $`c=1/64000`$.
-Whether the optimal global coefficient is $`1/25200`$, or is reduced by
-a nonzero-$`t`$ obstruction, remains **UNKNOWN**.
+have $`c\le1/25200`$. The exact certificate in [SharpGap.md](SharpGap.md) proves that
+$`c=1/25200`$ holds globally. Hence this coefficient is optimal, with no
+nonzero-parameter obstruction. The simpler endpoint path
+$`v_t=1-t^2/15`$ suffices for optimality and does not require the full
+optimizer classification developed here.
