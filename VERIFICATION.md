@@ -1,10 +1,20 @@
 # Verification contract
 
-The expanded package is a **locally checked verification candidate** with
-33 compared contracts and 353 supporting axiom audits. Its complete
-51-module build and local checks passed. The earlier Linux run below
-verifies only the original 24-contract source; a new exact-candidate Linux
-comparison and independent-kernel replay is still required.
+The expanded formal package passed **exact-commit Linux verification** at
+`51c9ea6c9e52870eb8b0b29bd6b9e076d463170c` in
+[run 38075942873](https://github.com/JD-Jones-ASES/support-criterion/actions/runs/38075942873):
+33 compared contracts, 353 supporting axiom audits, sandboxed Comparator,
+Lean/NanoDa/con-ron replay, exact certificate and negative controls, and a
+separate fresh build of all 51 project modules. The verification-record
+update preserves every formal source, dependency pin, contract, certificate,
+and verification script.
+
+The entry inputs are [formalization.yaml](formalization.yaml),
+[comparator.json](comparator.json), the independent Challenge and Solution,
+and the committed Lean/Mathlib pins. Use the full `main` commit SHA when
+selecting the entry revision. The [workflow run records](https://github.com/JD-Jones-ASES/support-criterion/actions/workflows/verify.yml)
+identify the exact revision checked; repository verification is distinct
+from Palomar submission, registry acceptance, and human review.
 
 The package retains the original twelve principal theorems and twelve
 explicit definition contracts, and adds nine principal statements listed below. The independent Challenge imports
@@ -116,7 +126,8 @@ source checks, Markdown links and fences, and whitespace checks passed. A
 raw-declaration comparison matched all 22 shared definitions, 33 theorem
 signatures and four generated proof declarations with zero mismatches. A
 local MathML conversion checked all 350 mathematical expressions without
-formula errors; this is not a new GitHub rendering check.
+formula errors. Subsequent inspection of the eight mathematical pages at
+`51c9ea6` confirmed all 350 formulas rendered correctly on GitHub.
 
 These are local build, mathematical and source checks. They do not substitute
 for the sandboxed exact-commit Linux gate below. No submission or new external
@@ -146,9 +157,17 @@ The `verified/2026-10-10` tag identifies
 The subsequent documentation revisions through
 `b2aba5c092f26787cc06260994cb8e8d577ded86` preserved every Lean file,
 dependency pin, comparison contract, certificate and verification script.
-The sharp extensions change the formal payload, so the historical Linux
-acceptance is not evidence for this expanded candidate. Its local checks
-and subsequent exact-candidate Linux gate must be recorded separately.
+The sharp extensions changed the formal payload and received their own
+[successful exact-commit run 38075942873](https://github.com/JD-Jones-ASES/support-criterion/actions/runs/38075942873)
+at `51c9ea6c9e52870eb8b0b29bd6b9e076d463170c`. Both Linux jobs completed
+successfully. The separate fresh build passed 9,029 Lake jobs; both runners'
+33-contract and 353-supporting-declaration axiom audits agree exactly.
+Comparator accepted the independent statements, and its exported solution
+was explicitly accepted by Lean's default kernel, NanoDa, and con-ron.
+Con-ron checked 47,525 declarations. All normal/optimized certificate
+replays and negative controls passed, and tracked sources remained unchanged.
+The saved `kernels.json` identifies the candidate, compiler revision, binary
+and sandbox hashes, configuration hashes, and each kernel acceptance.
 The workflow is repository verification, not a Palomar submission or an
 official hardware-profile preflight.
 
