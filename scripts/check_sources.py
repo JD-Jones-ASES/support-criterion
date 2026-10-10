@@ -18,7 +18,7 @@ NAME = re.compile(r"[A-Za-z_][A-Za-z0-9_']*(?:\.[A-Za-z_][A-Za-z0-9_']*)*\Z")
 SHA = re.compile(r"[0-9a-f]{40}\Z")
 PUBLIC_GIT = re.compile(r"https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+\Z")
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
-COMPILED = {".olean", ".ilean", ".a", ".bc", ".dll", ".dylib", ".o", ".obj", ".so", ".trace"}
+COMPILED = {".olean", ".ilean", ".ir", ".a", ".bc", ".dll", ".dylib", ".o", ".obj", ".so", ".trace"}
 
 
 def fail(message: str) -> None:
@@ -102,7 +102,7 @@ def main() -> None:
 
     for file in project_files():
         relative = file.relative_to(ROOT)
-        if file.suffix in COMPILED and file.is_file():
+        if (file.suffix in COMPILED or file.name.endswith((".olean.private", ".olean.server"))) and file.is_file():
             fail(f"Compiled artifact outside .lake: {relative}")
         if file.suffix != ".lean":
             continue

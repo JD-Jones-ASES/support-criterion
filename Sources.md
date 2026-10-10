@@ -29,8 +29,8 @@ and Statistics 24 (2020), 39–55.
 Proposition 3.2 gives necessary cumulant conditions; Proposition 3.3 gives
 Gaussian domination of all even moments as a sufficient condition for
 symmetric laws. The universal band theorem requires more than that
-sufficient condition: its endpoint law of variance `9/10` has normalized
-sixth-moment deficit `−51/1000`, while the full MGF remains dominated.
+sufficient condition: its endpoint law of variance `9/10` satisfies
+`E X⁶ = 117/10 > 15(9/10)³`, while the full MGF remains dominated.
 
 **Bobkov, Chistyakov, Götze.** *Strictly subgaussian probability
 distributions*, Electronic Journal of Probability 29 (2024), paper 62.
