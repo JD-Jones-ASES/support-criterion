@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "validator_repository": "https://github.com/PalomarRegistry/PalomarSubmission",
+  "validator_commit": "d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44",
+  "validator_functions": [
+    "load_formalization_metadata",
+    "normalized_provenance"
+  ],
+  "yaml_parser": "PyYAML 6.0.3",
+  "formalization_sha256": "774b55692bff1acfad81944269740bbb713875393e5c74f494161527bc60eee1",
+  "validator_file_sha256": {
+    "scripts/submission_contract.py": "724f82211ef702e2d1b4e5012183e532bd8f8ba03ba676022e4722a420c5be75",
+    "scripts/orcid_validation.py": "2f368bf27a27f150da1a03f502ff0f45845fce1d5ebcf8dcfcf10908b5d360b7",
+    "scripts/verification_errors.py": "ce58c4adc2f896a8ce69961d1f49ada7f571d86f9638a196f34197e3293cc776",
+    "taxonomies/arxiv-categories.json": "3b339cf140a914c50bab39b1c44df2437ce3984bd09bb2150fcb0edd60eda776",
+    "taxonomies/msc2020-codes.json": "b4de69f1f562da01e0f4580cecc0ab36098f5297bb7cdd669c8ec3b0d3606060"
+  },
+  "scope": "Local metadata and provenance validation only; no registry preparation or submission."
+}

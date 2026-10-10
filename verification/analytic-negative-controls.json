@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "controls": [
+    {
+      "name": "strong_chord_coefficient",
+      "source": "SupportCriterion/Chord.lean",
+      "source_sha256": "f2d6a298bd81dcff5715d20c6b5aaf2527c92797059d9024c4632faf75b87ad3",
+      "baseline_exit": 0,
+      "mutant_exit": 1,
+      "expected_diagnostic": "Type mismatch",
+      "expected_rejection": true,
+      "baseline_output": "SupportCriterion/Chord.lean:44:21: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+      "mutant_output": "<temporary-directory>/strong_chord_coefficient.lean:44:21: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n<temporary-directory>/strong_chord_coefficient.lean:69:2: error: Type mismatch: The rewritten hypothesis\n  hle\nhas type\n  (x ^ 2 - lowerSq) * (upperSq - x ^ 2) * t ^ 4 / 24 \u2264 endpointMGF (x ^ 2) t - Real.cosh (t * x)\nbut is expected to have type\n  (x ^ 2 - lowerSq) * (upperSq - x ^ 2) * t ^ 4 / 23 \u2264 endpointMGF (x ^ 2) t - Real.cosh (t * x)\n\nNote: The following definitions were not unfolded because their definition is not exposed:\n  Real.instLE \u21a6 2\n<temporary-directory>/strong_chord_coefficient.lean:78:61: error: Type mismatch\n  pointwise_strong_chord hx t\nhas type\n  (x ^ 2 - lowerSq) * (upperSq - x ^ 2) * t ^ 4 / 23 \u2264 endpointMGF (x ^ 2) t - Real.cosh (t * x)\nbut is expected to have type\n  (fun x => (x ^ 2 - lowerSq) * (upperSq - x ^ 2) * t ^ 4 / 24) x \u2264\n    (fun x => endpointMGF (x ^ 2) t - Real.cosh (t * x)) x\n\nNote: The following definitions were not unfolded because their definition is not exposed:\n  Real.instLE \u21a6 4\n"
+    },
+    {
+      "name": "intrinsic_deficit_coefficient",
+      "source": "SupportCriterion/LawGap.lean",
+      "source_sha256": "67bd967445d0a1d546f91fbe18dac5048dc79af8d52ea6fd3310e842ce9af2c9",
+      "baseline_exit": 0,
+      "mutant_exit": 1,
+      "expected_diagnostic": "linarith failed to find a contradiction",
+      "expected_rejection": true,
+      "baseline_output": "",
+      "mutant_output": "<temporary-directory>/intrinsic_deficit_coefficient.lean:24:2: error: linarith failed to find a contradiction\nhendpoint :\n  \u2200 (v t : \u211d),\n    lowerSq \u2264 v \u2192 v \u2264 upperSq \u2192 (v - 1) ^ 2 * t ^ 4 / 16000 + t ^ 8 / 64000 \u2264 Real.exp (v * t ^ 2 / 2) - endpointMGF v t\n\u03bc : Measure \u211d\ninst\u271d : IsProbabilityMeasure \u03bc\nh\u03bc : NormalizedSupport \u03bc\nhs : Symmetric \u03bc\nt : \u211d\nhv : lowerSq \u2264 variance \u03bc \u2227 variance \u03bc \u2264 upperSq\nh1 :\n  (variance \u03bc - 1) ^ 2 * t ^ 4 / 16000 + t ^ 8 / 64000 \u2264 Real.exp (variance \u03bc * t ^ 2 / 2) - endpointMGF (variance \u03bc) t\nh2 : interiority \u03bc * t ^ 4 / 24 \u2264 endpointMGF (variance \u03bc) t - mgf \u03bc t\nhd : 0 \u2264 interiority \u03bc\na\u271d :\n  Real.exp (variance \u03bc * t ^ 2 / 2) - mgf \u03bc t <\n    (3 * (variance \u03bc - 1) ^ 2 + interiority \u03bc) * t ^ 4 / 47999 + t ^ 8 / 64000\n\u22a2 False\nfailed\n"
+    }
+  ]
+}

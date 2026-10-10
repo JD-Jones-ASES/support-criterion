@@ -1,0 +1,98 @@
+version: v0.4
+
+project:
+  name: Sharp universal support criterion for sub-Gaussian laws
+  description: >-
+    For every Borel probability law on the real line that is symmetric about
+    zero and satisfies 0 < a <= |X| <= b almost surely, the support ratio
+    b/a <= sqrt(3) + sqrt(2) guarantees E exp(t X) <= exp(t^2 E X^2 / 2)
+    for every real t. The inequality is strict for nonzero t, and the actual
+    variance is the optimal quadratic proxy. An explicit symmetric law on
+    {-R,-1,1,R} violates the bound near zero for each larger ratio R.
+    In the normalization 3-sqrt(6) <= X^2 <= 3+sqrt(6), the development
+    also establishes a uniform quantitative MGF gap, identifies the unique
+    law with Gaussian fourth-moment contact, and proves the sharp local
+    Wasserstein bound for the squared law at every fourth-cumulant deficit
+    between zero and one half, including attainment. The proof combines a
+    convex endpoint reduction, control of the entire moment tail, a finite
+    exact rational Bernstein certificate, and an explicit transport coupling.
+  authors:
+    - JD Jones
+  responsible_maintainers:
+    - JD Jones
+  license: MIT
+
+classification:
+  arxiv: [math.PR]
+  msc2020: [60E15, 60E05]
+
+status:
+  scope: >-
+    The five principal groups are the universal support criterion with proxy
+    optimality, ratio sharpness, quantitative MGF separation, fourth-moment
+    rigidity, and sharp local stability for squared laws with attainment.
+    The independent Challenge also records the semantics of its ordinary
+    probability and transport definitions. Exact-commit Linux verification
+    is recorded in VERIFICATION.md.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: [propext, Classical.choice, Quot.sound]
+
+sources:
+  - title: A sharp support ratio for strict sub-Gaussianity, with quantitative and stability extensions
+    type: other
+    relationship: formalizes
+    id: https://github.com/JD-Jones-ASES/Analytic-Lab/tree/e21bc7fec23629dcae412f3f442e3f7db61d2b9d/research/subgaussian_support
+    revision: e21bc7fec23629dcae412f3f442e3f7db61d2b9d
+    note: Written mathematical source developed in Analytic-Lab on 2026-10-10.
+  - title: On strict sub-Gaussianity, optimal proxy variance and symmetry for bounded random variables
+    type: paper
+    relationship: background
+    authors: [Julyan Arbel, Olivier Marchal, Hien D. Nguyen]
+    id: https://arxiv.org/pdf/1901.09188v1
+    note: Propositions 3.2 and 3.3 give cumulant necessity and momentwise sufficiency.
+  - title: Strictly subgaussian probability distributions
+    type: paper
+    relationship: background
+    authors: [Sergey G. Bobkov, Gennadiy P. Chistyakov, Friedrich Götze]
+    id: https://arxiv.org/pdf/2308.01749v1
+    note: Proposition 2.4 concerns mixtures whose components have equal variance.
+  - title: Polynomial methods in statistical inference, theory and practice
+    type: paper
+    relationship: background
+    authors: [Yihong Wu, Pengkun Yang]
+    id: https://arxiv.org/pdf/2104.07317v2
+    note: Section 2.7.1, Lemma 2.7.3 in the pinned PDF establishes Gaussian-quadrature sub-Gaussianity.
+  - title: Operator inequalities related to Cauchy-Schwarz and Hölder-McCarthy inequalities
+    type: paper
+    relationship: background
+    authors: [M. Fujii, S. Izumino, R. Nakamoto, Y. Seo]
+    id: https://www.researchgate.net/publication/254210690_Operator_Inequalities_Related_To_Cauchy-Schwarz_And_Holder-McCarthy_Inequalities
+    note: Records the classical Kantorovich moment inequality underlying the fourth-moment obstruction.
+
+automation:
+  methods:
+    - method: agent
+      models: [GPT-6 Astra]
+      framework: OpenAI Codex
+      tool_setup: OpenAI Codex with GPT-6 Astra; Lean 4 and Mathlib at committed revisions.
+      notes: >-
+        Agents developed the proof, generated exact rational certificate data,
+        implemented the Lean development, checked primary sources, and reviewed
+        the statements. Lean checks the generated identities and inequalities;
+        Python execution is not a proof premise. Disclosure.md gives the
+        production account. Verification commands and exact-commit records are
+        maintained separately.
+
+review:
+  status: agent-reviewed
+  reviewers: [OpenAI Codex agents]
+  notes: >-
+    Separate internal agent reviews checked the written mathematics, source
+    comparisons, and formal interfaces. Mechanical verification status is
+    recorded in VERIFICATION.md. No human specialist review is asserted.
+
+limitations:
+  - The numerical constants in the quantitative MGF gap are not asserted optimal.
+  - The sharp Wasserstein modulus concerns squared laws and deficits in [0, 1/2].
+  - Conditional concentration and optimized local worst-law asymptotics are explanatory supplements.

@@ -1,0 +1,36 @@
+{
+  "challenge_module": "SupportCriterionChallenge",
+  "solution_module": "SupportCriterionSolution",
+  "theorem_names": [
+    "SupportCriterion.normalized_quantitative_gap",
+    "SupportCriterion.scaled_quantitative_gap",
+    "SupportCriterion.universal_support_criterion",
+    "SupportCriterion.universal_strict",
+    "SupportCriterion.variance_proxy_optimality",
+    "SupportCriterion.sharp_universal_ratio",
+    "SupportCriterion.fourth_deficit_decomposition",
+    "SupportCriterion.critical_law_rigidity",
+    "SupportCriterion.squared_transport_finiteness",
+    "SupportCriterion.squared_transport_bound",
+    "SupportCriterion.sharp_local_transport",
+    "SupportCriterion.local_transport_attainment",
+    "SupportCriterion.mgf_definition",
+    "SupportCriterion.variance_definition",
+    "SupportCriterion.fourthDeficit_definition",
+    "SupportCriterion.interiority_definition",
+    "SupportCriterion.symmetric_definition",
+    "SupportCriterion.normalizedSupport_definition",
+    "SupportCriterion.bandSupport_definition",
+    "SupportCriterion.criticalLaw_definition",
+    "SupportCriterion.symmetricTwoPoint_definition",
+    "SupportCriterion.counterexampleLaw_definition",
+    "SupportCriterion.squaredLaw_definition",
+    "SupportCriterion.wassersteinOne_definition"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}
