@@ -194,8 +194,8 @@ W_1(\mathcal L(Y),\mathcal L(X_0^2))
 
 Put `h=|v−1|`. For `δ≤1/2`, the function
 `h+(δ−3h²)/√6` is increasing on `0≤h≤√(δ/3)`; its maximum is
-`√(δ/3)`. The endpoint law of mean `1+√(δ/3)` has `d=0`, has deficit
-`δ`, and attains this cost. Every coupling costs at least the absolute
+`√(δ/3)`. The law of `Y` supported on `{A,B}` with mean `1+√(δ/3)` has
+`d=0`, has deficit `δ`, and attains this cost. Every coupling costs at least the absolute
 difference of means, which proves attainment for the actual distance.
 
 ## Gaussian quadrature and applications
@@ -211,16 +211,15 @@ theorem additionally controls every endpoint weight and every magnitude
 distribution in the bands.
 
 Independent sums and deterministic linear forms inherit the bound by
-multiplication of their MGFs. If their variance is `V>0`, the usual
-Chernoff argument gives two-sided tail bound `2 exp(−u²/(2V))`.
+multiplication of their MGFs. If such a sum `S` has variance `V>0`, the
+usual Chernoff argument gives `Pr(|S|≥u)≤2 exp(−u²/(2V))` for every `u>0`.
 Conditional versions use the same support theorem on each conditional
 law and the standard exponential supermartingale construction. These
 applications do not require the resulting sum itself to remain in a
 positive magnitude band.
 
-The mathematical account originates in the pinned
-[Lab proof and extensions](https://github.com/JD-Jones-ASES/Analytic-Lab/tree/e21bc7fec23629dcae412f3f442e3f7db61d2b9d/research/subgaussian_support).
-The repository's build and comparison records specify which statements
-have completed formal verification. The optimized local worst-law
-asymptotic, the full conditional concentration development, and optimal
-numerical MGF-gap constants are outside the initial formal contract.
+[Proof.md](Proof.md) gives the full mathematical argument, and
+[VERIFICATION.md](VERIFICATION.md) specifies the formal scope and completed
+checks. The optimized local worst-law asymptotic and full conditional
+concentration development are written supplements. Optimal numerical
+MGF-gap constants remain an open question.

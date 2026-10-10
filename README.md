@@ -18,8 +18,9 @@ for every nonzero `t`. Every larger support ratio admits an explicit
 symmetric four-point counterexample. The theorem includes discrete,
 continuous and mixed probability laws.
 
-Set `A = 3−√6`, `B = 3+√6`. For normalized squared support in `[A,B]`,
-write `v = EX²`, `δ = 3v²−EX⁴`, and `d = E[(X²−A)(B−X²)]`. The package gives
+Set `A = 3−√6`, `B = 3+√6`. For a symmetric law with normalized squared
+support in `[A,B]`, write `v = EX²`, `δ = 3v²−EX⁴`, and
+`d = E[(X²−A)(B−X²)]`. The package gives
 
 ```math
 \delta=3(v-1)^2+d,\qquad
@@ -27,8 +28,9 @@ write `v = EX²`, `δ = 3v²−EX⁴`, and `d = E[(X²−A)(B−X²)]`. The pack
  \ge\frac{\delta t^4}{48000}+\frac{t^8}{64000}.
 ```
 
-Zero fourth deficit identifies one probability law: the four-node Gaussian
-quadrature law `X₀`, with total outer-node weight `(√6−2)/(2√6)`.
+Among symmetric laws in these bands, zero fourth deficit identifies the
+four-node Gaussian quadrature law `X₀`, with total outer-node weight
+`(√6−2)/(2√6)`.
 For `0 ≤ δ ≤ 1/2`, the squared laws obey
 
 ```math
@@ -65,5 +67,3 @@ python3 scripts/independent_certificate_check.py
 python3 scripts/check_sources.py
 python3 scripts/audit_axioms.py
 ```
-
-The repository is private. Publication and submission remain separate steps.

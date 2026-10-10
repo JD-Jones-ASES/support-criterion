@@ -4,19 +4,9 @@ Primary-source audit checked 2026-10-10. The statements below distinguish
 the universal support theorem from related moment, mixture, and
 quadrature results. This is a bounded literature comparison.
 
-## Source of this development
-
-[A sharp support ratio for strict sub-Gaussianity, with quantitative and
-stability extensions](https://github.com/JD-Jones-ASES/Analytic-Lab/tree/e21bc7fec23629dcae412f3f442e3f7db61d2b9d/research/subgaussian_support),
-Analytic-Lab, 2026-10-10, revision
-`e21bc7fec23629dcae412f3f442e3f7db61d2b9d`.
-
-This repository formalizes the universal criterion, sharpness, quantitative
-MGF separation, critical-law rigidity, and sharp local squared-law
-stability in those written notes. Its mathematical proof uses an exact
-rational Bernstein certificate. The source is an earlier written
-presentation of these results, so the structured source relationship is
-`formalizes`.
+The theorem and its explanation are in [Note.md](Note.md); the full
+mathematical argument is in [Proof.md](Proof.md). The sources below provide
+the related published results and background.
 
 ## Strict sub-Gaussianity
 
@@ -120,20 +110,3 @@ realized squared increments. The support criterion permits actual
 conditional variances in the Gaussian MGF bound. Conditional and
 time-uniform applications remain explanatory material unless separately
 listed among the verified declarations.
-
-## Audit boundary and package policy
-
-The comparison checked the cited statements and the Lab's recorded
-cross-check of Bobkov–Chistyakov–Götze,
-[*Rényi Divergences in Central Limit Theorems: Old and New*,
-arXiv:2503.03926v1, §§22–24](https://arxiv.org/pdf/2503.03926v1).
-Targeted searches covered strict sub-Gaussian support criteria, amplitude
-mixtures, fourth moments, quadrature, and stability. The compared results
-do not state the all-laws, all-weights band criterion in this repository.
-
-The package layout was checked against official
-[Palomar policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/96b034cc31a72a63d4f4041911dce337a85c9a04/CONTRIBUTING.md),
-revision `96b034cc31a72a63d4f4041911dce337a85c9a04`, current when checked.
-The Challenge must expose the principal statements using their ordinary
-mathematical meanings. Formal verification and any future registry action
-are reported separately in the repository's validation records.

@@ -13,7 +13,7 @@ Every symmetric real random variable with $`\Pr(X=0)=0`$ has the same law as
 $`\varepsilon H`$, where $`H=|X|>0`$ and the independent sign
 $`\varepsilon`$ takes each value $`\pm1`$ with probability one half.
 Indeed symmetry gives, for every Borel set $`C\subset(0,\infty)`$,
-$`\Pr(H\in C,\operatorname{sgn}X=1)=\Pr(H\in C)/2`$.
+$`\Pr(H\in C,X>0)=\Pr(H\in C)/2`$.
 
 Consequently an arbitrary mixture of centered two-point laws is strictly
 sub-Gaussian whenever all amplitudes lie in a band of ratio at most

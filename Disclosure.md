@@ -1,10 +1,11 @@
 # Production and review
 
-The mathematical argument was developed in Analytic-Lab from a supplied
-AI-assisted problem proposal. The proposal supplied the support ratio,
-endpoint reduction and fourth-moment obstruction. The Lab work supplied the
-complete tail argument, exact finite certificate and the extensions developed
-in this package. The written source is pinned in `formalization.yaml`.
+An AI-assisted problem proposal supplied the support ratio, endpoint
+reduction and fourth-moment obstruction. Subsequent AI-assisted proof
+development supplied the complete tail argument, exact finite certificate,
+and quantitative, rigidity and stability extensions. The mathematical
+argument is presented in [Proof.md](Proof.md), with an overview in
+[Note.md](Note.md).
 
 OpenAI Codex assisted with the Lean formalization, proof development, exact
 certificate generation, source review and documentation. Separate agent

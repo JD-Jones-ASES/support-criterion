@@ -16,7 +16,7 @@ all implementation modules contain no proof holes or added axioms.
 | `normalized_quantitative_gap` | Intrinsic fourth-deficit and eighth-order gap in the normalized bands. |
 | `scaled_quantitative_gap` | The corresponding exact original-scale estimate. |
 | `fourth_deficit_decomposition` | Exact decomposition into variance displacement and the nonnegative interiority moment. |
-| `critical_law_rigidity` | Zero fourth deficit if and only if the signed probability measure is the explicit critical law. |
+| `critical_law_rigidity` | Zero fourth deficit if and only if the probability law of X is the explicit critical law. |
 | `squared_transport_finiteness` | Couplings exist, every coupling cost is finite, and the Wasserstein infimum is finite. |
 | `squared_transport_bound` | Constructive transport bound by variance displacement and interiority. |
 | `sharp_local_transport` | Ordinary squared-law W₁ bound for every deficit at most one half. |
@@ -28,14 +28,15 @@ measures, symmetric two-point measure, squared pushforward, and the infimum
 definition of ordinary Wasserstein distance. The corresponding finiteness
 theorem justifies taking the real value of that extended infimum.
 
-The transport upper bounds need only normalized squared support; the signed
-MGF and rigidity theorems retain symmetry. `Applications.lean` identifies
+The transport upper bounds need only normalized squared support; the MGF
+and rigidity theorems for X retain symmetry. `Applications.lean` identifies
 the second-moment parameter with Mathlib's variance and provides supporting
 sub-Gaussian, random-variable, independent-sum and Chernoff corollaries.
 `QuadratureMoments.lean` gives the actual critical-law moment table through
 degree eight. These supporting declarations build with the package and
-receive the separate transitive-axiom audit. The compared closure is exactly
-the list in [comparator.json](comparator.json).
+receive the separate transitive-axiom audit. The selected statements are
+exactly those listed in [comparator.json](comparator.json); Comparator checks
+their dependency closure.
 
 ## Reproduction
 
@@ -43,7 +44,7 @@ the list in [comparator.json](comparator.json).
 - Mathlib: `a98628e16c11f5167f16124105ddce53efa9bfe5`.
 - All transitive Git dependencies: exact revisions in `lake-manifest.json`.
 - Permitted axioms: `propext`, `Classical.choice`, `Quot.sound`.
-- Principal declarations: 24; supporting axiom-audit declarations: 244.
+- Compared declarations: 24; supporting axiom-audit declarations: 244.
 - Formal sources: 37 Lean files; no source exceeds 10,000 lines.
 
 ```sh
@@ -88,9 +89,14 @@ kernel runner uses the checkers bundled with the selected Lean release, with
 two con-ron workers; it runs Comparator under bubblewrap. The saved intake
 configuration is not modified to add the independent checkers.
 
-The `verified/2026-10-10` tag is created only for a commit whose two jobs
-pass. Match its resolved SHA to the exact-commit run under [GitHub Actions](https://github.com/JD-Jones-ASES/support-criterion/actions/workflows/verify.yml).
-The local evidence directory may additionally retain ignored raw logs.
+The `verified/2026-10-10` tag identifies
+`438600c1ae148abf353c5ff9898fc953f1528d30`, which passed both jobs in
+[run 38069219096](https://github.com/JD-Jones-ASES/support-criterion/actions/runs/38069219096).
+Subsequent documentation and source-metadata edits preserve every Lean file,
+dependency pin, comparison contract, certificate, and verification script
+from that revision. The exact-commit kernel evidence applies to the tagged
+revision; the documentation changes were checked separately for metadata
+validity, links, and GitHub rendering.
 The workflow is repository verification, not a Palomar submission or an
 official hardware-profile preflight.
 
@@ -107,5 +113,3 @@ The source contract was checked against PalomarPolicy
 follows PalomarSubmission `d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44`.
 Conditional/time-uniform concentration and optimized local asymptotics remain
 written supplements. The numerical MGF constants are not asserted optimal.
-The repository remains private; no publication or submission is performed by
-its workflow.

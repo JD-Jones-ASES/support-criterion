@@ -39,12 +39,11 @@ status:
   axioms: [propext, Classical.choice, Quot.sound]
 
 sources:
-  - title: A sharp support ratio for strict sub-Gaussianity, with quantitative and stability extensions
-    type: other
-    relationship: formalizes
-    id: https://github.com/JD-Jones-ASES/Analytic-Lab/tree/e21bc7fec23629dcae412f3f442e3f7db61d2b9d/research/subgaussian_support
-    revision: e21bc7fec23629dcae412f3f442e3f7db61d2b9d
-    note: Written mathematical source developed in Analytic-Lab on 2026-10-10.
+  - title: Sharp universal support criterion
+    type: original-proof
+    relationship: other
+    location: Proof.md
+    note: The mathematical statement and proof are presented in this repository.
   - title: On strict sub-Gaussianity, optimal proxy variance and symmetry for bounded random variables
     type: paper
     relationship: background

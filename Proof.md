@@ -397,9 +397,10 @@ $`0\le h\le\sqrt{\delta/3}`$. The function on the right has derivative
 $`1-\sqrt6 h`$. It is therefore increasing throughout this interval
 when $`\delta\le1/2`$, and its maximum is $`\sqrt{\delta/3}`$.
 
-For every $`\delta\in[0,1/2]`$, an endpoint law with mean
-$`v=1+\sqrt{\delta/3}`$ attains the local transport bound. This variance
-belongs to $`[A,B]`$, its interiority moment is zero, and its cumulant deficit is
+For every $`\delta\in[0,1/2]`$, a law of $`Y`$ supported on $`\{A,B\}`$
+with mean $`v=1+\sqrt{\delta/3}`$ attains the local transport bound.
+This mean belongs to $`[A,B]`$ and is the variance of the associated
+symmetric $`X`$. Its interiority moment is zero, and its cumulant deficit is
 exactly $`\delta`$. Its transport distance from $`Y_0`$ is exactly
 $`|v-1|`$: every coupling has cost at least the difference of means,
 and moving endpoint mass attains that lower bound. Thus $`\sqrt{\delta/3}`$
@@ -448,8 +449,9 @@ stronger estimate
 ```
 
 
-Here are the precise extra certificate data. Set $`w=1-v`$ and
-$`z=7wr/(1-r)`$. If
+Here are the precise extra certificate data. For $`w=1-v>0`$ and
+$`0\le r<1`$, set $`z=7wr/(1-r)`$. Recall the polynomial from Section 4,
+obtained by cancellation in
 
 
 ```math
@@ -458,7 +460,7 @@ R(w,r)=\frac{(1-r)^3}{w^2}
 ```
 
 
-then certify
+The polynomial extends to $`w=0`$ and $`r=1`$. We certify
 
 
 ```math
