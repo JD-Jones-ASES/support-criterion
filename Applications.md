@@ -5,7 +5,7 @@ are consequences of the
 [sharp support theorem](Proof.md), using the standard exponential
 supermartingale argument. The concentration machinery is classical;
 the support criterion makes
-the actual conditional variance a valid proxy.
+the actual conditional variance a valid proxy. Write $R_*=\sqrt3+\sqrt2$.
 
 ## Random amplitudes
 
@@ -103,7 +103,7 @@ M_n(\lambda)=\exp\{\lambda S_n-\lambda^2V_n/2\},\qquad M_0=1,
 
 
 is a nonnegative supermartingale. To see this, factor out the measurable
-$M_{n-1}$ and use (A1). Conditional expectation for nonnegative variables
+$M_{n-1}$ and use the conditional MGF bound. Conditional expectation for nonnegative variables
 is legitimate before integrability is known, and induction gives
 $\mathbb EM_n\le1$, establishing integrability as well.
 
@@ -134,9 +134,9 @@ $M_n\ge e^{u^2/(2v)}$, giving
 
 
 Applying the same argument to $-S_n$ gives the two-sided version with
-factor two. The variance budget in (A3) is a fixed deterministic value;
+factor two. The variance budget $v$ in this crossing bound is a fixed deterministic value;
 one cannot replace it after observing the path and keep the same bound
-without further argument. The line boundary (A2) is already valid at every
+without further argument. The preceding affine boundary in $V_n$ is already valid at every
 time simultaneously.
 
 ## What this connection adds
@@ -144,7 +144,7 @@ time simultaneously.
 The variance process here is the sum of **conditional variances**. General
 conditional symmetry also gives classical self-normalized bounds involving
 the sum of realized squared increments, which is a different random
-process. The support-ratio hypothesis supplies (A1) with the former.
+process. The support-ratio hypothesis supplies the conditional MGF bound with the former.
 Neither process is universally smaller than the other on each sample path.
 
 Howard, Ramdas, McAuliffe and Sekhon,
@@ -154,7 +154,7 @@ version: Probability Surveys 17, 2020), provides the general framework:
 Definition 1, Lemma 1 and equation (2.12); Lemma 3(d) treats conditional
 symmetry with realized quadratic variation. The arXiv version inspected
 was revised 2025-12-17. The displayed consequences above are derived here
-from (A1), rather than asserted as new concentration principles.
+from the conditional MGF bound.
 
 These results do not remove symmetry, cover arbitrary dependence, prove
 matrix concentration, or give a plug-in bound for estimated variance.

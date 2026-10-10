@@ -1,7 +1,8 @@
 # Local asymptotics of the worst endpoint law
 
 This is a written supplement outside the formal contract. Here $M_v(t)$ is
-the endpoint-mixture MGF of variance $v$ from [Proof.md](Proof.md).
+the endpoint-mixture MGF of variance $v$ from [Proof.md](Proof.md), with
+$A=3-\sqrt6$ and $B=3+\sqrt6$.
 
 Let $\mathcal C$ be all symmetric laws with squared support inside
 $[A,B]$. For fixed nonzero $t$, the chord argument shows that
@@ -27,7 +28,7 @@ M_v(t)=u(z)+v\,d_1(z),\qquad H_1(z)=d_1(z)/z.
 
 
 The notation $d_1$ here is an analytic coefficient, distinct from the
-support-interiority moment $d$ in Section 1.
+support-interiority moment $d=\mathbb E[(X^2-A)(B-X^2)]$.
 The recurrence $s_n=6s_{n-1}-3s_{n-2}$, $s_0=1,s_1=v$, determines
 these functions. Since $d_1(z)=z+O(z^2)$, the interior maximizer
 extends analytically to zero and is
@@ -67,7 +68,7 @@ The $z^5$, equivalently $t^{10}$, coefficient vanishes. These
 coefficients follow from ordinary division and logarithm of convergent
 power series; the exact moment recurrence suffices to replay them.
 
-Equation (15) distinguishes a fixed exceptional law from the worst law
+The expansion of the maximum distinguishes a fixed exceptional law from the worst law
 allowed to depend on $t$. The latter has variance slightly below one.
 It also shows that any universal inequality
 $e^{vt^2/2}-\mathbb Ee^{tX}\ge c\,t^8$ on $\mathcal C$ must

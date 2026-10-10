@@ -31,8 +31,8 @@ The law may be discrete, continuous or mixed; no density, finite-support
 or independence assumption is made. Symmetry supplies $\mathbb EX=0$.
 
 Here “strictly sub-Gaussian” has the conventional meaning that the optimal
-proxy is the actual variance. Strictness of (1) away from zero is an
-additional conclusion, not the definition of that terminology.
+proxy is the actual variance. Strictness of the MGF inequality away from
+zero is an additional conclusion, not the definition of that terminology.
 
 ## 1. Reduce every law to the critical four endpoints
 
@@ -47,8 +47,8 @@ A=3-\sqrt6,\qquad B=3+\sqrt6.
 These numbers obey $A+B=6$, $AB=3$,
 $B/A=5+2\sqrt6=R_*^2$, and $A>11/20$.
 Replacing $X$ by $\sqrt A X/a$ places $X^2$ in $[A,B]$.
-Proving (1) after this scaling proves the original statement for all real
-$t$, including when $a=b$.
+Proving the MGF inequality after this scaling proves the original statement
+for all real $t$, including when $a=b$.
 
 For fixed $t$, the entire power series
 
@@ -71,9 +71,9 @@ The chord bound on $[A,B]$, symmetry and $v=\mathbb EX^2$ give
 
 
 The right side is the MGF of a symmetric four-point law with the same
-variance $v$. It suffices to prove (1) for every such law, where
-$A\le v\le B$. For $t\ne0$, $g_t$ is strictly convex, so equality
-in (2) forces $X^2\in\{A,B\}$ almost surely.
+variance $v$. It suffices to prove the MGF inequality for every such law,
+where $A\le v\le B$. For $t\ne0$, $g_t$ is strictly convex, so equality
+in the chord bound forces $X^2\in\{A,B\}$ almost surely.
 
 ## 2. Control the infinite tail by the endpoint recurrence
 
@@ -122,7 +122,7 @@ f_5(v)\ge\frac{14621}{26880}v-\frac{677}{1792}
 
 Next, $B/A<11$. For $v\ge A$ and $n\ge5$,
 $B<(2n+1)v$, while $s_{n+1}\le Bs_n$ because $X^2\le B$.
-Induction from (4) proves
+Induction from the strict positivity of $f_5$ proves
 
 
 ```math
@@ -148,7 +148,8 @@ e^{vz}-\mathbb Ee^{tX}
 ```
 
 
-For $v\ge1$, (3)–(5) prove positivity of (6) whenever $z>0$.
+For $v\ge1$, the coefficient bounds prove that the displayed MGF
+difference is positive whenever $z>0$.
 For $A\le v\le1$, it is enough to prove
 
 
@@ -159,9 +160,10 @@ P(v,z):=\frac{(v-1)^2}{2}
 ```
 
 
-because (6) is $z^2P(v,z)$ plus the nonnegative tail from $n=6$.
-By (5), that tail is strictly positive for $z>0$. Thus even a
-non-strict certificate for (7) proves strictness in (1).
+because the MGF difference is $z^2P(v,z)$ plus the nonnegative tail
+from $n=6$. The strict positivity of $f_n$ for $n\ge5$ makes that
+tail strictly positive for $z>0$. Thus even a non-strict certificate
+for $P(v,z)\ge0$ proves strictness of the MGF inequality.
 
 ## 4. An exact certificate for the finite polynomial
 
@@ -262,7 +264,8 @@ restriction to sampled parameter values.
 
 For any centered nonzero bounded random variable, the Taylor expansion at
 zero shows that a valid Gaussian proxy $\tau^2$ must satisfy
-$\tau^2\ge\mathbb EX^2$. Hence (1) uses the optimal proxy.
+$\tau^2\ge\mathbb EX^2$. Hence the sharp support theorem uses the
+optimal proxy.
 
 For any ratio $R>R_*$, put $q=R^2$ and choose the symmetric law
 
@@ -283,7 +286,7 @@ It has $\mathbb EX^2=2q/(q+1)$, $\mathbb EX^4=q$, and
 
 
 The difference between its MGF and the variance-matched Gaussian MGF is
-this positive quantity times $t^4/24$, plus $O(t^6)$. Thus (1) fails
+this positive quantity times $t^4/24$, plus $O(t^6)$. Thus the MGF bound fails
 for all sufficiently small nonzero $t$. This gives a counterexample
 at every larger support ratio, rather than only along a selected sequence.
 
@@ -375,8 +378,8 @@ coupling preserves the conditional mean and satisfies
 The endpoint law $\widehat Y$ has mean $v$. Moving its excess
 endpoint mass to the other endpoint couples it to $Y_0$ at cost
 exactly $|v-1|$. Combine these couplings and use the triangle
-inequality. The second bound follows from (1), $d\le\delta$, and
-$B-A=2\sqrt6$.
+inequality. The second bound follows from the fourth-cumulant identity,
+$d\le\delta$, and $B-A=2\sqrt6$.
 
 For small fourth-cumulant deficit, the exact local modulus is sharper:
 
@@ -387,23 +390,25 @@ For small fourth-cumulant deficit, the exact local modulus is sharper:
 ```
 
 
-To see this, set $h=|v-1|$. The first bound in (S) and (1) give
+To see this, set $h=|v-1|$. The constructive transport bound and
+the fourth-cumulant identity give
 $W_1\le h+(\delta-3h^2)/\sqrt6$, where
 $0\le h\le\sqrt{\delta/3}$. The function on the right has derivative
 $1-\sqrt6 h$. It is therefore increasing throughout this interval
 when $\delta\le1/2$, and its maximum is $\sqrt{\delta/3}$.
 
 For every $\delta\in[0,1/2]$, an endpoint law with mean
-$v=1+\sqrt{\delta/3}$ attains (S1). This variance belongs to
-$[A,B]$, its interiority moment is zero, and its cumulant deficit is
+$v=1+\sqrt{\delta/3}$ attains the local transport bound. This variance
+belongs to $[A,B]$, its interiority moment is zero, and its cumulant deficit is
 exactly $\delta$. Its transport distance from $Y_0$ is exactly
 $|v-1|$: every coupling has cost at least the difference of means,
-and moving endpoint mass attains that lower bound. Thus (S1) is the
-sharp local modulus over the whole distribution class at each indicated
+and moving endpoint mass attains that lower bound. Thus $\sqrt{\delta/3}$
+is the sharp local modulus over the whole distribution class at each indicated
 value of $\delta$, not just an asymptotic coefficient.
 
 Symmetric signs can be coupled identically, and the square-root map is
-$1/(2\sqrt A)$-Lipschitz on $[A,B]$. Consequently (S) also gives
+$1/(2\sqrt A)$-Lipschitz on $[A,B]$. Consequently the squared-law
+transport estimate also gives
 
 
 ```math
@@ -413,7 +418,9 @@ W_1(\mathcal L(X),\mathcal L(X_0))
 ```
 
 
-For $\delta\le1/2$, the parenthesis can be replaced by $\sqrt{\delta/3}$ using (S1). No optimal constant is asserted for this last, unsquared-law bound.
+For $\delta\le1/2$, the parenthesis can be replaced by
+$\sqrt{\delta/3}$ using the sharp local squared-law bound. No optimal
+constant is asserted for this last, unsquared-law bound.
 
 ## 8. A global quantitative gap for every law
 
@@ -474,13 +481,13 @@ is one zero; the minimum positive coefficient is
 
 The SHA256 of the ordered canonical Fraction strings, separated by newlines,
 is `93bb378759a066ecee34980c00e7a4a1cb518cd0044f658fddc48a216b8e3523`.
-The identity in (5), after multiplication by $w^2/(1-r)^3$, gives
-exactly (4). At $w=0$, use
+The shifted certificate, after multiplication by $w^2/(1-r)^3$, gives
+exactly the displayed lower bound for $P(v,z)$. At $w=0$, use
 $P(1,z)=z^2/105+z^3/225$ directly.
 The exact generator and Lean certificate modules retain this finite calculation.
 
 Let $M_v(t)$ denote the endpoint-law MGF. The main proof's nonnegative
-Taylor tail and (4) imply
+Taylor tail and the lower bound for $P(v,z)$ imply
 
 
 ```math
@@ -489,10 +496,11 @@ e^{vt^2/2}-M_v(t)
 ```
 
 
-For $v\ge1$, the same estimate follows without (5): the second and
-fourth coefficients in the $z$-series are at least
+For $v\ge1$, the same estimate follows without the shifted certificate:
+the second and fourth coefficients in the $z$-series are at least
 $(v-1)^2/2$ and $1/105$, respectively, and every other coefficient
-is nonnegative. Thus (6) holds for every $v\in[A,B]$.
+is nonnegative. Thus the displayed endpoint MGF gap holds for every
+$v\in[A,B]$.
 
 There is also a quantitative endpoint reduction. The function
 $g(y)=\cosh(t\sqrt y)$ satisfies
@@ -512,7 +520,8 @@ M_v(t)-\mathbb Ee^{tX}\ge\frac{d\,t^4}{24}.
 ```
 
 
-Combining (6)–(7) proves the quantitative theorem
+Adding the endpoint MGF gap and the strengthened chord remainder proves
+the quantitative theorem
 
 
 ```math
@@ -523,7 +532,7 @@ Combining (6)–(7) proves the quantitative theorem
 ```
 
 
-In particular, (1) implies the simpler intrinsic form
+In particular, the fourth-cumulant identity implies the simpler intrinsic form
 
 
 ```math
@@ -533,12 +542,13 @@ In particular, (1) implies the simpler intrinsic form
 ```
 
 
-The numerical constants in (8)–(9) are certified, not asserted optimal.
+The numerical constants in these two quantitative gap bounds are certified,
+not asserted optimal.
 For every admissible law the MGF inequality is strict at every $t\ne0$;
 its only equality parameter is $t=0$.
 
 For the original support condition $0<a\le|X|\le b$ with
-$b/a\le\sqrt3+\sqrt2$, apply (9) to $\sqrt A\,X/a$.
+$b/a\le\sqrt3+\sqrt2$, apply the intrinsic gap bound to $\sqrt A\,X/a$.
 With $v=\mathbb EX^2$ and the original fourth cumulant, this yields
 
 
@@ -574,7 +584,7 @@ standard Gaussian, then $\mathbb E[H(Z)q(Z)]=0$ for every polynomial
 $q$ of degree at most three, using the normal moments and parity.
 Every polynomial $f$ of degree at most seven has a division
 $f=Hq+r$, with $\deg q\le3$ and $\deg r\le3$.
-The law $X_0$ from (2) and $Z$ agree on all moments through degree
+The critical law $X_0$ and $Z$ agree on all moments through degree
 three, while $H(X_0)=0$ almost surely. Therefore
 
 
@@ -583,7 +593,7 @@ three, while $H(X_0)=0$ almost surely. Therefore
 ```
 
 
-Thus (2) is exactly the four-node Gaussian quadrature law for the standard
+Thus $X_0$ is exactly the four-node Gaussian quadrature law for the standard
 normal measure. In particular,
 
 
@@ -616,7 +626,8 @@ f(x)-h(x)=\frac{f^{(8)}(\xi_x)}{8!}H(x)^2.
 
 
 If $f\in C^8(\mathbb R)$, $\mathbb E|f(Z)|<\infty$, and
-$f^{(8)}\ge0$, integrating and using (11) yields
+$f^{(8)}\ge0$, integrating and using exactness for polynomials of degree
+at most seven yields
 $\mathbb Ef(Z)\ge\mathbb Ef(X_0)$. For $f(x)=e^{tx}$ and
 $t\ne0$, the remainder is positive away from the four nodes, giving
 strict inequality. This is the usual Gaussian-quadrature remainder mechanism;
@@ -625,9 +636,9 @@ it is consistent with the general error formula in
 
 The quadrature observation explains the special constant and moment contact.
 It does not prove the all-weights support-ratio theorem: varying the endpoint
-weights destroys Gaussian quadrature exactness. The main proof and (5)
-control that variation. No new claim is made for the classical quadrature
-law's own sub-Gaussianity. Wu–Yang,
+weights destroys Gaussian quadrature exactness. The endpoint-series
+comparison and shifted Bernstein certificate control that variation.
+Wu–Yang,
 [*Polynomial methods in statistical inference: theory and practice*,
 §2.7.1, Remark 2.7.2 and Lemma 2.7.3](https://arxiv.org/pdf/2104.07317v2),
 identify the Hermite nodes and explicitly prove Gaussian even-moment domination
