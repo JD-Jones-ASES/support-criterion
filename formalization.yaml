@@ -25,7 +25,7 @@ project:
 
 classification:
   arxiv: [math.PR]
-  msc2020: [60E15, 60E05]
+  msc2020: ["60E15", "60E05"]
 
 status:
   scope: >-
